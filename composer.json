@@ -1,0 +1,14 @@
+{
+  "name": "neomerx/core-api",
+  "description": "Neomerx framework core API",
+  "require": {
+    "php":                         ">=5.5.0",
+    "symfony/expression-language": "2.5.*",
+    "neomerx/core":                "dev-dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "Neomerx\\CoreApi\\": "./src/"
+    }
+  }
+}
