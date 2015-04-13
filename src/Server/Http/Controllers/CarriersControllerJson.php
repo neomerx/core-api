@@ -17,7 +17,7 @@ final class CarriersControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(Carriers::INTERFACE_BIND_NAME, App::make(CarrierConverterGeneric::BIND_NAME));
+        parent::__construct(Carriers::INTERFACE_BIND_NAME, App::make(CarrierConverterGeneric::class));
     }
 
     /**

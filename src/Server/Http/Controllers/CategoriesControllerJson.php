@@ -20,7 +20,7 @@ final class CategoriesControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(Categories::INTERFACE_BIND_NAME, App::make(CategoryConverterGeneric::BIND_NAME));
+        parent::__construct(Categories::INTERFACE_BIND_NAME, App::make(CategoryConverterGeneric::class));
     }
 
     /**
@@ -207,11 +207,11 @@ final class CategoriesControllerJson extends BaseControllerJson
 //     */
 //    protected function showProductsImpl($code, $languageFilter)
 //    {
-//        $productAndPosPairs = $this->getApiFacade()->showProducts($this->getModelByCode(Category::BIND_NAME, $code));
+//        $productAndPosPairs = $this->getApiFacade()->showProducts($this->getModelByCode(Category::class, $code));
 //
 //        /** @noinspection PhpUndefinedMethodInspection */
 //        /** @var ProductConverterGeneric $productConverter */
-//        $productConverter = App::make(ProductConverterGeneric::BIND_NAME);
+//        $productConverter = App::make(ProductConverterGeneric::class);
 //        $productConverter->setLanguageFilter($languageFilter);
 //
 //        $result = [];
@@ -235,7 +235,7 @@ final class CategoriesControllerJson extends BaseControllerJson
 //    protected function updatePositionsImpl($code, array $productPositions)
 //    {
 //        $products = $this->getApiFacade()->updatePositions(
-//            $this->getModelByCode(Category::BIND_NAME, $code),
+//            $this->getModelByCode(Category::class, $code),
 //            $productPositions
 //        );
 //        return [$products, null];

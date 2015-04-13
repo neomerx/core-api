@@ -13,7 +13,7 @@ final class ImageFormatsControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(ImageFormats::INTERFACE_BIND_NAME, App::make(ImageFormatConverterGeneric::BIND_NAME));
+        parent::__construct(ImageFormats::INTERFACE_BIND_NAME, App::make(ImageFormatConverterGeneric::class));
     }
 
     /**

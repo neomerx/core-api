@@ -79,10 +79,10 @@ class FormulaCalculator implements TariffCalculatorInterface
         $addressFrom = $data->getAddressFrom();
         /** @noinspection PhpUndefinedMethodInspection */
         $parameters  = [
-            self::PARAM_CART         => (object)App::make(CartConverterGeneric::BIND_NAME)->convert($cart),
-            self::PARAM_CUSTOMER     => (object)App::make(CustomerConverterGeneric::BIND_NAME)->convert($customer),
-            self::PARAM_ADDRESS_TO   => (object)App::make(AddressConverterGeneric::BIND_NAME)->convert($addressTo),
-            self::PARAM_ADDRESS_FROM => (object)App::make(AddressConverterGeneric::BIND_NAME)->convert($addressFrom),
+            self::PARAM_CART         => (object)App::make(CartConverterGeneric::class)->convert($cart),
+            self::PARAM_CUSTOMER     => (object)App::make(CustomerConverterGeneric::class)->convert($customer),
+            self::PARAM_ADDRESS_TO   => (object)App::make(AddressConverterGeneric::class)->convert($addressTo),
+            self::PARAM_ADDRESS_FROM => (object)App::make(AddressConverterGeneric::class)->convert($addressFrom),
         ];
 
         /** @var Closure $closure */

@@ -13,7 +13,7 @@ final class CustomerTypesControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(CustomerTypes::INTERFACE_BIND_NAME, App::make(CustomerTypeConverterGeneric::BIND_NAME));
+        parent::__construct(CustomerTypes::INTERFACE_BIND_NAME, App::make(CustomerTypeConverterGeneric::class));
     }
 
     /**

@@ -17,7 +17,7 @@ final class RoleObjectTypesControllerJson extends BaseDependentResourceControlle
     public function __construct()
     {
         parent::__construct(
-            app(RoleObjectTypeConverterGeneric::BIND_NAME),
+            app(RoleObjectTypeConverterGeneric::class),
             RoleObjectTypesInterface::PARAM_ROLE_CODE,
             RoleObjectTypesInterface::PARAM_ID
         );

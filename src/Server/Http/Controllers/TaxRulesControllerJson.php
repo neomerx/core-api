@@ -15,7 +15,7 @@ final class TaxRulesControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(TaxRules::INTERFACE_BIND_NAME, App::make(TaxRuleConverterGeneric::BIND_NAME));
+        parent::__construct(TaxRules::INTERFACE_BIND_NAME, App::make(TaxRuleConverterGeneric::class));
     }
 
     /**

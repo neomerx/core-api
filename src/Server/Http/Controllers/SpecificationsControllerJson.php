@@ -12,6 +12,6 @@ final class SpecificationsControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(Specifications::INTERFACE_BIND_NAME, App::make(SpecificationConverterGeneric::BIND_NAME));
+        parent::__construct(Specifications::INTERFACE_BIND_NAME, App::make(SpecificationConverterGeneric::class));
     }
 }

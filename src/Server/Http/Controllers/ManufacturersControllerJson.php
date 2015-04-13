@@ -16,7 +16,7 @@ final class ManufacturersControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(Manufacturers::INTERFACE_BIND_NAME, App::make(ManufacturerConverterGeneric::BIND_NAME));
+        parent::__construct(Manufacturers::INTERFACE_BIND_NAME, App::make(ManufacturerConverterGeneric::class));
     }
 
     /**

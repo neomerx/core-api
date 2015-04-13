@@ -13,7 +13,7 @@ final class CustomerRisksControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(CustomerRisks::INTERFACE_BIND_NAME, App::make(CustomerRiskConverterGeneric::BIND_NAME));
+        parent::__construct(CustomerRisks::INTERFACE_BIND_NAME, App::make(CustomerRiskConverterGeneric::class));
     }
 
     /**

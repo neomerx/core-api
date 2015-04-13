@@ -16,7 +16,7 @@ final class SuppliersControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(Suppliers::INTERFACE_BIND_NAME, App::make(SupplierConverterGeneric::BIND_NAME));
+        parent::__construct(Suppliers::INTERFACE_BIND_NAME, App::make(SupplierConverterGeneric::class));
     }
 
     /**

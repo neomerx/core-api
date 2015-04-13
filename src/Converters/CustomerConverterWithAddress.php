@@ -20,7 +20,7 @@ class CustomerConverterWithAddress extends CustomerConverterGeneric
     public function __construct(ConverterInterface $converter = null)
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        $this->addressConverter = $converter ? $converter : App::make(AddressConverterGeneric::BIND_NAME);
+        $this->addressConverter = $converter ? $converter : App::make(AddressConverterGeneric::class);
     }
 
     /**

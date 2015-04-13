@@ -17,7 +17,7 @@ final class EmployeeRolesControllerJson extends BaseDependentResourceControllerJ
     public function __construct()
     {
         parent::__construct(
-            app(EmployeeRoleConverterGeneric::BIND_NAME),
+            app(EmployeeRoleConverterGeneric::class),
             EmployeeRolesInterface::PARAM_ID_EMPLOYEE,
             EmployeeRolesInterface::PARAM_ID
         );

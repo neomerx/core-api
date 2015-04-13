@@ -32,7 +32,7 @@ class ProductConverterSmallDescription extends BasicConverterWithLanguageFilter
     {
         parent::__construct($languageFilter);
         /** @noinspection PhpUndefinedMethodInspection */
-        $this->imageConverter = $imageConverter ? $imageConverter : App::make(ImageConverterGeneric::BIND_NAME);
+        $this->imageConverter = $imageConverter ? $imageConverter : App::make(ImageConverterGeneric::class);
     }
 
     /**

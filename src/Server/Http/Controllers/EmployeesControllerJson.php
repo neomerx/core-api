@@ -15,7 +15,7 @@ final class EmployeesControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(Employees::INTERFACE_BIND_NAME, App::make(EmployeeConverterGeneric::BIND_NAME));
+        parent::__construct(Employees::INTERFACE_BIND_NAME, App::make(EmployeeConverterGeneric::class));
     }
 
     /**

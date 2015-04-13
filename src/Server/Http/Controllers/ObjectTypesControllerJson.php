@@ -15,7 +15,7 @@ final class ObjectTypesControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(ObjectTypes::INTERFACE_BIND_NAME, App::make(ObjectTypeConverterGeneric::BIND_NAME));
+        parent::__construct(ObjectTypes::INTERFACE_BIND_NAME, App::make(ObjectTypeConverterGeneric::class));
     }
 
     /**

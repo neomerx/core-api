@@ -14,7 +14,7 @@ final class VariantsControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(Variants::INTERFACE_BIND_NAME, App::make(VariantConverterGeneric::BIND_NAME));
+        parent::__construct(Variants::INTERFACE_BIND_NAME, App::make(VariantConverterGeneric::class));
     }
 
     /**

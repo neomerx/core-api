@@ -14,7 +14,7 @@ final class ProductCategoriesControllerJson extends BaseControllerJson
         /** @noinspection PhpUndefinedMethodInspection */
         parent::__construct(
             ProductCategories::INTERFACE_BIND_NAME,
-            App::make(ProductCategoryConverterGeneric::BIND_NAME)
+            App::make(ProductCategoryConverterGeneric::class)
         );
     }
 }

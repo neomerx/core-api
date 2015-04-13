@@ -111,7 +111,7 @@ class InventoryControllerJson extends BaseController
         $inventory = $this->apiFacade->read($sku, $warehouseCode);
         /** @noinspection PhpUndefinedMethodInspection */
         /** @var ConverterInterface $converter */
-        $converter = App::make(InventoryConverterGeneric::BIND_NAME);
+        $converter = App::make(InventoryConverterGeneric::class);
         return [$converter->convert($inventory), null];
     }
 

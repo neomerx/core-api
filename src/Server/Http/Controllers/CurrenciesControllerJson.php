@@ -16,7 +16,7 @@ final class CurrenciesControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(Currencies::INTERFACE_BIND_NAME, App::make(CurrencyConverterGeneric::BIND_NAME));
+        parent::__construct(Currencies::INTERFACE_BIND_NAME, App::make(CurrencyConverterGeneric::class));
     }
 
     /**

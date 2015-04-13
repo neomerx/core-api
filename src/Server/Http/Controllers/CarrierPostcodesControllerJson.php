@@ -17,7 +17,7 @@ final class CarrierPostcodesControllerJson extends BaseControllerJson
         /** @noinspection PhpUndefinedMethodInspection */
         parent::__construct(
             CarrierPostcodes::INTERFACE_BIND_NAME,
-            App::make(CarrierPostcodeConverterGeneric::BIND_NAME)
+            App::make(CarrierPostcodeConverterGeneric::class)
         );
     }
 }

@@ -12,6 +12,6 @@ final class ProductImagesControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(ProductImages::INTERFACE_BIND_NAME, App::make(ProductImageConverterGeneric::BIND_NAME));
+        parent::__construct(ProductImages::INTERFACE_BIND_NAME, App::make(ProductImageConverterGeneric::class));
     }
 }

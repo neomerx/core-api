@@ -114,7 +114,7 @@ final class CustomerAddressesControllerJson extends BaseController
 
         /** @noinspection PhpUndefinedMethodInspection */
         /** @var AddressConverterCustomer $addressConverter */
-        $addressConverter = App::make(AddressConverterCustomer::BIND_NAME);
+        $addressConverter = App::make(AddressConverterCustomer::class);
 
         $result = [];
         foreach ($customerAddresses as $customerAddress) {

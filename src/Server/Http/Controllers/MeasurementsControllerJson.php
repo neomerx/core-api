@@ -16,7 +16,7 @@ final class MeasurementsControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(Measurements::INTERFACE_BIND_NAME, App::make(MeasurementConverterGeneric::BIND_NAME));
+        parent::__construct(Measurements::INTERFACE_BIND_NAME, App::make(MeasurementConverterGeneric::class));
     }
 
     /**

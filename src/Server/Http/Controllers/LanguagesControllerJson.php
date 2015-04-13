@@ -13,7 +13,7 @@ final class LanguagesControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(Languages::INTERFACE_BIND_NAME, App::make(LanguageConverterGeneric::BIND_NAME));
+        parent::__construct(Languages::INTERFACE_BIND_NAME, App::make(LanguageConverterGeneric::class));
     }
 
     /**

@@ -21,7 +21,7 @@ final class ProductsControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(Products::INTERFACE_BIND_NAME, App::make(ProductConverterGeneric::BIND_NAME));
+        parent::__construct(Products::INTERFACE_BIND_NAME, App::make(ProductConverterGeneric::class));
     }
 
     /**
@@ -383,11 +383,11 @@ final class ProductsControllerJson extends BaseControllerJson
 //    {
 //        /** @var CategoryConverterGeneric $converter */
 //        /** @noinspection PhpUndefinedMethodInspection */
-//        $converter = App::make(CategoryConverterGeneric::BIND_NAME);
+//        $converter = App::make(CategoryConverterGeneric::class);
 //        $converter->setLanguageFilter($languageFilter);
 //
 //        $result = [];
-//        $resources = $this->getApiFacade()->showCategories($this->getModelByCode(Product::BIND_NAME, $productSKU));
+//        $resources = $this->getApiFacade()->showCategories($this->getModelByCode(Product::class, $productSKU));
 //        foreach ($resources as $resource) {
 //            $result[] = $converter->convert($resource);
 //        }
@@ -403,7 +403,7 @@ final class ProductsControllerJson extends BaseControllerJson
 //     */
 //    protected function updateCategoriesImpl($productSKU, array $categoryCodes)
 //    {
-//        $this->getApiFacade()->updateCategories($this->getModelByCode(Product::BIND_NAME, $productSKU), $categoryCodes);
+//        $this->getApiFacade()->updateCategories($this->getModelByCode(Product::class, $productSKU), $categoryCodes);
 //        return [null, null];
 //    }
 //
@@ -418,9 +418,9 @@ final class ProductsControllerJson extends BaseControllerJson
 //
 //        /** @var ConverterInterface $converter */
 //        /** @noinspection PhpUndefinedMethodInspection */
-//        $converter = App::make(ProductConverterSmallDescription::BIND_NAME);
+//        $converter = App::make(ProductConverterSmallDescription::class);
 //
-//        $related = $this->getApiFacade()->showRelated($this->getModelByCode(Product::BIND_NAME, $productSKU));
+//        $related = $this->getApiFacade()->showRelated($this->getModelByCode(Product::class, $productSKU));
 //        foreach ($related as $product) {
 //            $result[] = $converter->convert($product);
 //        }
@@ -436,7 +436,7 @@ final class ProductsControllerJson extends BaseControllerJson
 //     */
 //    protected function updateRelatedImpl($productSKU, array $productSKUs)
 //    {
-//        $this->getApiFacade()->updateRelated($this->getModelByCode(Product::BIND_NAME, $productSKU), $productSKUs);
+//        $this->getApiFacade()->updateRelated($this->getModelByCode(Product::class, $productSKU), $productSKUs);
 //        return [null, null];
 //    }
 //
@@ -449,11 +449,11 @@ final class ProductsControllerJson extends BaseControllerJson
 //    protected function showProductSpecificationImpl($productSKU, $languageFilter)
 //    {
 //        $specification = $this->getApiFacade()->showProductSpecification(
-//            $this->getModelByCode(Product::BIND_NAME, $productSKU)
+//            $this->getModelByCode(Product::class, $productSKU)
 //        );
 //        /** @var SpecificationCollectionConverterGeneric $converter */
 //        /** @noinspection PhpUndefinedMethodInspection */
-//        $converter = App::make(SpecificationCollectionConverterGeneric::BIND_NAME);
+//        $converter = App::make(SpecificationCollectionConverterGeneric::class);
 //        $converter->setLanguageFilter($languageFilter);
 //        $result = $converter->convert($specification);
 //
@@ -469,7 +469,7 @@ final class ProductsControllerJson extends BaseControllerJson
 //    protected function storeProductSpecificationImpl($productSKU, array $parameters)
 //    {
 //        $this->getApiFacade()->storeProductSpecification(
-//            $this->getModelByCode(Product::BIND_NAME, $productSKU),
+//            $this->getModelByCode(Product::class, $productSKU),
 //            $parameters
 //        );
 //        return [null, null];
@@ -484,7 +484,7 @@ final class ProductsControllerJson extends BaseControllerJson
 //    protected function updateProductSpecificationImpl($productSKU, array $parameters)
 //    {
 //        $this->getApiFacade()->updateProductSpecification(
-//            $this->getModelByCode(Product::BIND_NAME, $productSKU),
+//            $this->getModelByCode(Product::class, $productSKU),
 //            $parameters
 //        );
 //        return [null, null];
@@ -499,7 +499,7 @@ final class ProductsControllerJson extends BaseControllerJson
 //    protected function destroyProductSpecificationImpl($productSKU, array $valueCodes)
 //    {
 //        $this->getApiFacade()->destroyProductSpecification(
-//            $this->getModelByCode(Product::BIND_NAME, $productSKU),
+//            $this->getModelByCode(Product::class, $productSKU),
 //            $valueCodes
 //        );
 //        return [null, null];
@@ -514,11 +514,11 @@ final class ProductsControllerJson extends BaseControllerJson
 //     */
 //    protected function showProductImagesImpl($productSKU, $languageFilter, $formatFiler)
 //    {
-//        $images = $this->getApiFacade()->showProductImages($this->getModelByCode(Product::BIND_NAME, $productSKU));
+//        $images = $this->getApiFacade()->showProductImages($this->getModelByCode(Product::class, $productSKU));
 //
 //        /** @var ProductImageConverterGeneric $converter */
 //        /** @noinspection PhpUndefinedMethodInspection */
-//        $converter = App::make(ProductImageConverterGeneric::BIND_NAME);
+//        $converter = App::make(ProductImageConverterGeneric::class);
 //        $converter->setLanguageFilter($languageFilter);
 //        $converter->setFormatFiler($formatFiler);
 //
@@ -541,7 +541,7 @@ final class ProductsControllerJson extends BaseControllerJson
 //    protected function storeProductImagesImpl($productSKU, array $parameters, array $files)
 //    {
 //        $this->getApiFacade()->storeProductImages(
-//            $this->getModelByCode(Product::BIND_NAME, $productSKU),
+//            $this->getModelByCode(Product::class, $productSKU),
 //            $parameters,
 //            $files
 //        );
@@ -556,7 +556,7 @@ final class ProductsControllerJson extends BaseControllerJson
 //     */
 //    protected function destroyProductImageImpl($productSKU, $imageId)
 //    {
-//        $this->getApiFacade()->destroyProductImage($this->getModelByCode(Product::BIND_NAME, $productSKU), $imageId);
+//        $this->getApiFacade()->destroyProductImage($this->getModelByCode(Product::class, $productSKU), $imageId);
 //        return [null, null];
 //    }
 //
@@ -568,7 +568,7 @@ final class ProductsControllerJson extends BaseControllerJson
 //     */
 //    protected function setDefaultProductImageImpl($productSKU, $imageId)
 //    {
-//        $this->getApiFacade()->setDefaultProductImage($this->getModelByCode(Product::BIND_NAME, $productSKU), $imageId);
+//        $this->getApiFacade()->setDefaultProductImage($this->getModelByCode(Product::class, $productSKU), $imageId);
 //        return [null, null];
 //    }
 //
@@ -580,7 +580,7 @@ final class ProductsControllerJson extends BaseControllerJson
 //     */
 //    protected function storeVariantImpl($productSKU, array $parameters)
 //    {
-//        $this->getApiFacade()->storeVariant($this->getModelByCode(Product::BIND_NAME, $productSKU), $parameters);
+//        $this->getApiFacade()->storeVariant($this->getModelByCode(Product::class, $productSKU), $parameters);
 //        return [null, null];
 //    }
 //
@@ -604,7 +604,7 @@ final class ProductsControllerJson extends BaseControllerJson
 //    protected function makeSpecificationVariableImpl($productSKU, $valueCode)
 //    {
 //        $this->getApiFacade()->makeSpecificationVariable(
-//            $this->getModelByCode(Product::BIND_NAME, $productSKU),
+//            $this->getModelByCode(Product::class, $productSKU),
 //            $valueCode
 //        );
 //        return [null, null];
@@ -619,7 +619,7 @@ final class ProductsControllerJson extends BaseControllerJson
 //    protected function updateVariantSpecificationImpl($variantSKU, array $parameters)
 //    {
 //        $this->getApiFacade()->updateVariantSpecification(
-//            $this->getModelByCode(Variant::BIND_NAME, $variantSKU),
+//            $this->getModelByCode(Variant::class, $variantSKU),
 //            $parameters
 //        );
 //        return [null, null];
@@ -634,7 +634,7 @@ final class ProductsControllerJson extends BaseControllerJson
 //    protected function makeSpecificationNonVariableImpl($variantSKU, $valueCode)
 //    {
 //        $this->getApiFacade()->makeSpecificationNonVariable(
-//            $this->getModelByCode(Variant::BIND_NAME, $variantSKU),
+//            $this->getModelByCode(Variant::class, $variantSKU),
 //            $valueCode
 //        );
 //        return [null, null];
@@ -649,11 +649,11 @@ final class ProductsControllerJson extends BaseControllerJson
 //     */
 //    protected function showVariantImagesImpl($variantSKU, $languageFilter, $formatFiler)
 //    {
-//        $images = $this->getApiFacade()->showVariantImages($this->getModelByCode(Variant::BIND_NAME, $variantSKU));
+//        $images = $this->getApiFacade()->showVariantImages($this->getModelByCode(Variant::class, $variantSKU));
 //
 //        /** @var ProductImageConverterGeneric $converter */
 //        /** @noinspection PhpUndefinedMethodInspection */
-//        $converter = App::make(ProductImageConverterGeneric::BIND_NAME);
+//        $converter = App::make(ProductImageConverterGeneric::class);
 //        $converter->setLanguageFilter($languageFilter);
 //        $converter->setFormatFiler($formatFiler);
 //
@@ -676,7 +676,7 @@ final class ProductsControllerJson extends BaseControllerJson
 //    protected function storeVariantImagesImpl($variantSKU, array $parameters, array $files)
 //    {
 //        $this->getApiFacade()->storeVariantImages(
-//            $this->getModelByCode(Variant::BIND_NAME, $variantSKU),
+//            $this->getModelByCode(Variant::class, $variantSKU),
 //            $parameters,
 //            $files
 //        );
@@ -691,7 +691,7 @@ final class ProductsControllerJson extends BaseControllerJson
 //     */
 //    protected function destroyVariantImageImpl($variantSKU, $imageId)
 //    {
-//        $this->getApiFacade()->destroyVariantImage($this->getModelByCode(Variant::BIND_NAME, $variantSKU), $imageId);
+//        $this->getApiFacade()->destroyVariantImage($this->getModelByCode(Variant::class, $variantSKU), $imageId);
 //        return [null, null];
 //    }
 //
@@ -703,7 +703,7 @@ final class ProductsControllerJson extends BaseControllerJson
 //     */
 //    protected function updateVariantImpl($variantSKU, array $parameters)
 //    {
-//        $this->getApiFacade()->updateVariant($this->getModelByCode(Variant::BIND_NAME, $variantSKU), $parameters);
+//        $this->getApiFacade()->updateVariant($this->getModelByCode(Variant::class, $variantSKU), $parameters);
 //        return [null, null];
 //    }
 //

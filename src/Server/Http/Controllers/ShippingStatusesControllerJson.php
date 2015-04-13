@@ -15,7 +15,7 @@ final class ShippingStatusesControllerJson extends BaseControllerJson
         /** @noinspection PhpUndefinedMethodInspection */
         parent::__construct(
             ShippingStatuses::INTERFACE_BIND_NAME,
-            App::make(ShippingStatusConverterGeneric::BIND_NAME)
+            App::make(ShippingStatusConverterGeneric::class)
         );
     }
 

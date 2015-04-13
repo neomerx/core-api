@@ -13,7 +13,7 @@ final class RegionsControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(Regions::INTERFACE_BIND_NAME, App::make(RegionConverterGeneric::BIND_NAME));
+        parent::__construct(Regions::INTERFACE_BIND_NAME, App::make(RegionConverterGeneric::class));
     }
 
     /**

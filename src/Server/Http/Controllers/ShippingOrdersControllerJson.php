@@ -15,7 +15,7 @@ final class ShippingOrdersControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(ShippingOrders::INTERFACE_BIND_NAME, App::make(ShippingOrderConverterGeneric::BIND_NAME));
+        parent::__construct(ShippingOrders::INTERFACE_BIND_NAME, App::make(ShippingOrderConverterGeneric::class));
     }
 
     /**

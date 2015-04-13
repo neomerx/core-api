@@ -13,7 +13,7 @@ final class ProductTaxTypesControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(ProductTaxTypes::INTERFACE_BIND_NAME, App::make(ProductTaxTypeConverterGeneric::BIND_NAME));
+        parent::__construct(ProductTaxTypes::INTERFACE_BIND_NAME, App::make(ProductTaxTypeConverterGeneric::class));
     }
 
     /**

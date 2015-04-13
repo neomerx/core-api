@@ -17,7 +17,7 @@ final class CharacteristicsControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(Characteristics::INTERFACE_BIND_NAME, App::make(CharacteristicConverterGeneric::BIND_NAME));
+        parent::__construct(Characteristics::INTERFACE_BIND_NAME, App::make(CharacteristicConverterGeneric::class));
     }
 
     /**
@@ -73,7 +73,7 @@ final class CharacteristicsControllerJson extends BaseControllerJson
     protected function getValuesImpl($characteristicCode, $languageFilter)
     {
         /** @var FeatureValueConverterGeneric $converter */
-        $converter = app(FeatureValueConverterGeneric::BIND_NAME);
+        $converter = app(FeatureValueConverterGeneric::class);
         $converter->setLanguageFilter($languageFilter);
 
         $result = [];

@@ -93,7 +93,7 @@ class Related extends SingleResourceApi implements RelatedInterface
 //            foreach ($toAdd as $relatedProductId) {
 //                /** @var \Neomerx\Core\Models\ProductRelated $relatedProduct */
 //                /** @noinspection PhpUndefinedMethodInspection */
-//                $relatedProduct = App::make(ProductRelated::BIND_NAME);
+//                $relatedProduct = App::make(ProductRelated::class);
 //                $relatedProduct->fill([
 //                    ProductRelated::FIELD_ID_RELATED_PRODUCT => $relatedProductId,
 //                ]);

@@ -13,7 +13,7 @@ final class RolesControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(Roles::INTERFACE_BIND_NAME, App::make(RoleConverterGeneric::BIND_NAME));
+        parent::__construct(Roles::INTERFACE_BIND_NAME, App::make(RoleConverterGeneric::class));
     }
 
     /**

@@ -13,7 +13,7 @@ final class OrderStatusesControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(OrderStatuses::INTERFACE_BIND_NAME, App::make(OrderStatusConverterGeneric::BIND_NAME));
+        parent::__construct(OrderStatuses::INTERFACE_BIND_NAME, App::make(OrderStatusConverterGeneric::class));
     }
 
 

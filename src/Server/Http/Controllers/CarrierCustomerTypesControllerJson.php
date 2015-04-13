@@ -17,7 +17,7 @@ final class CarrierCustomerTypesControllerJson extends BaseControllerJson
         /** @noinspection PhpUndefinedMethodInspection */
         parent::__construct(
             CarrierCustomerTypes::INTERFACE_BIND_NAME,
-            App::make(CarrierCustomerTypeConverterGeneric::BIND_NAME)
+            App::make(CarrierCustomerTypeConverterGeneric::class)
         );
     }
 }

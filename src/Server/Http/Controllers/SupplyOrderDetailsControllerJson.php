@@ -17,7 +17,7 @@ final class SupplyOrderDetailsControllerJson extends BaseDependentResourceContro
     public function __construct()
     {
         parent::__construct(
-            app(SupplyOrderDetailsConverterGeneric::BIND_NAME),
+            app(SupplyOrderDetailsConverterGeneric::class),
             SupplyOrderDetailsInterface::PARAM_ID_SUPPLY_ORDER,
             SupplyOrderDetailsInterface::PARAM_ID
         );

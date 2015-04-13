@@ -99,7 +99,7 @@ class TaxRules extends SingleResourceApi implements TaxRulesInterface
 //
 //            /** @var \Neomerx\Core\Models\TaxRule $rule */
 //            /** @noinspection PhpUndefinedMethodInspection */
-//            $rule = App::make(TaxRule::BIND_NAME);
+//            $rule = App::make(TaxRule::class);
 //            $rule->fill($ruleData);
 //            $rule->{Tax::FIELD_ID} = $taxId;
 //            $rule->saveOrFail();

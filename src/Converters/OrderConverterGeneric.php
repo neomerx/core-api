@@ -23,7 +23,7 @@ class OrderConverterGeneric implements ConverterInterface
     public function __construct(ConverterInterface $addressConverter = null)
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        $this->addressConverter = $addressConverter ? $addressConverter : App::make(AddressConverterGeneric::BIND_NAME);
+        $this->addressConverter = $addressConverter ? $addressConverter : App::make(AddressConverterGeneric::class);
     }
 
     /**

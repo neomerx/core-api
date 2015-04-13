@@ -17,7 +17,7 @@ final class TaxRuleTerritoriesControllerJson extends BaseDependentResourceContro
     public function __construct()
     {
         parent::__construct(
-            app(TaxRuleTerritoryConverterGeneric::BIND_NAME),
+            app(TaxRuleTerritoryConverterGeneric::class),
             TaxRuleTerritoriesInterface::PARAM_ID_RULE,
             TaxRuleTerritoriesInterface::PARAM_ID
         );

@@ -12,6 +12,6 @@ final class ProductRelatedControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(Related::INTERFACE_BIND_NAME, App::make(ProductRelatedConverterGeneric::BIND_NAME));
+        parent::__construct(Related::INTERFACE_BIND_NAME, App::make(ProductRelatedConverterGeneric::class));
     }
 }

@@ -18,7 +18,7 @@ final class CountriesControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(Countries::INTERFACE_BIND_NAME, App::make(CountryConverterGeneric::BIND_NAME));
+        parent::__construct(Countries::INTERFACE_BIND_NAME, App::make(CountryConverterGeneric::class));
     }
 
     /**
@@ -79,7 +79,7 @@ final class CountriesControllerJson extends BaseControllerJson
         $result = [];
         /** @var RegionConverterGeneric $converter */
         /** @noinspection PhpUndefinedMethodInspection */
-        $converter = App::make(RegionConverterGeneric::BIND_NAME);
+        $converter = App::make(RegionConverterGeneric::class);
         foreach ($regions as $region) {
             $result[] = $converter->convert($region);
         }

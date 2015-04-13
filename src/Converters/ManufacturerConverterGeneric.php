@@ -26,7 +26,7 @@ class ManufacturerConverterGeneric extends BasicConverterWithLanguageFilter
     {
         parent::__construct($languageFilter);
         /** @noinspection PhpUndefinedMethodInspection */
-        $this->addressConverter = $addressConverter ? $addressConverter : App::make(AddressConverterGeneric::BIND_NAME);
+        $this->addressConverter = $addressConverter ? $addressConverter : App::make(AddressConverterGeneric::class);
     }
 
     /**

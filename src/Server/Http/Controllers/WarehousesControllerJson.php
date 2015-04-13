@@ -13,7 +13,7 @@ final class WarehousesControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(Warehouses::INTERFACE_BIND_NAME, App::make(WarehouseConverterGeneric::BIND_NAME));
+        parent::__construct(Warehouses::INTERFACE_BIND_NAME, App::make(WarehouseConverterGeneric::class));
     }
 
     /**

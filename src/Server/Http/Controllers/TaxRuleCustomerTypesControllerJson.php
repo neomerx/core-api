@@ -17,7 +17,7 @@ final class TaxRuleCustomerTypesControllerJson extends BaseDependentResourceCont
     public function __construct()
     {
         parent::__construct(
-            app(TaxRuleCustomerTypeConverterGeneric::BIND_NAME),
+            app(TaxRuleCustomerTypeConverterGeneric::class),
             TaxRuleCustomerTypesInterface::PARAM_ID_RULE,
             TaxRuleCustomerTypesInterface::PARAM_ID
         );

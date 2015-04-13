@@ -15,7 +15,7 @@ final class SupplyOrdersControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(SupplyOrders::INTERFACE_BIND_NAME, App::make(SupplyOrderConverterGeneric::BIND_NAME));
+        parent::__construct(SupplyOrders::INTERFACE_BIND_NAME, App::make(SupplyOrderConverterGeneric::class));
     }
 
     /**

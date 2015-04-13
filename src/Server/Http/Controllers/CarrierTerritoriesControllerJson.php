@@ -17,7 +17,7 @@ final class CarrierTerritoriesControllerJson extends BaseControllerJson
         /** @noinspection PhpUndefinedMethodInspection */
         parent::__construct(
             CarrierTerritories::INTERFACE_BIND_NAME,
-            App::make(CarrierTerritoryConverterGeneric::BIND_NAME)
+            App::make(CarrierTerritoryConverterGeneric::class)
         );
     }
 }

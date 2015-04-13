@@ -13,7 +13,7 @@ final class StoresControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(Stores::INTERFACE_BIND_NAME, App::make(StoreConverterGeneric::BIND_NAME));
+        parent::__construct(Stores::INTERFACE_BIND_NAME, App::make(StoreConverterGeneric::class));
     }
 
     /**

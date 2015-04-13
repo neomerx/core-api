@@ -16,7 +16,7 @@ final class FeatureValuesControllerJson extends BaseControllerJson
     public function __construct()
     {
         /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(FeatureValues::INTERFACE_BIND_NAME, App::make(FeatureValueConverterGeneric::BIND_NAME));
+        parent::__construct(FeatureValues::INTERFACE_BIND_NAME, App::make(FeatureValueConverterGeneric::class));
     }
 
     /**

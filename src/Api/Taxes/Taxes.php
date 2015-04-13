@@ -140,14 +140,14 @@ class Taxes extends SingleResourceApi implements TaxesInterface
         // format objects for tax calculation formula
         /** @noinspection PhpUndefinedMethodInspection */
         $taxParameters   = [
-            Tax::PARAM_CUSTOMER     => (object)App::make(CustomerConverterGeneric::BIND_NAME)->convert($customer),
-            Tax::PARAM_ADDRESS_TO   => (object)App::make(AddressConverterGeneric::BIND_NAME)->convert($addressTo),
-            Tax::PARAM_ADDRESS_FROM => (object)App::make(AddressConverterGeneric::BIND_NAME)->convert($addressFrom),
+            Tax::PARAM_CUSTOMER     => (object)App::make(CustomerConverterGeneric::class)->convert($customer),
+            Tax::PARAM_ADDRESS_TO   => (object)App::make(AddressConverterGeneric::class)->convert($addressTo),
+            Tax::PARAM_ADDRESS_FROM => (object)App::make(AddressConverterGeneric::class)->convert($addressFrom),
         ];
 
         /** @var ConverterInterface $variantConverter */
         /** @noinspection PhpUndefinedMethodInspection */
-        $variantConverter  = App::make(VariantConverterGeneric::BIND_NAME);
+        $variantConverter  = App::make(VariantConverterGeneric::class);
 
         /** @var CartItem $cartItem */
         foreach ($shippingData->getCart() as $cartItem) {

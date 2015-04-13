@@ -17,7 +17,7 @@ final class TaxRulePostcodesControllerJson extends BaseDependentResourceControll
     public function __construct()
     {
         parent::__construct(
-            app(TaxRulePostcodeConverterGeneric::BIND_NAME),
+            app(TaxRulePostcodeConverterGeneric::class),
             TaxRulePostcodesInterface::PARAM_ID_RULE,
             TaxRulePostcodesInterface::PARAM_ID
         );
