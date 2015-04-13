@@ -6,8 +6,6 @@ use \Neomerx\CoreApi\Api\SupplyOrders\SupplyOrderDetailsInterface as Api;
 
 class SupplyOrderDetailsConverterGeneric implements ConverterInterface
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format model to array representation.
      *

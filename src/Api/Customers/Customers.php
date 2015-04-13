@@ -16,7 +16,6 @@ use \Neomerx\Core\Repositories\Customers\CustomerTypeRepositoryInterface;
 class Customers extends SingleResourceApi implements CustomersInterface
 {
     const EVENT_PREFIX = 'Api.Customer.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var CustomerTypeRepositoryInterface

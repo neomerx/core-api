@@ -9,7 +9,6 @@ use \Neomerx\Core\Repositories\Orders\ShippingStatusRepositoryInterface;
 class ShippingStatuses extends SingleResourceApi implements ShippingStatusesInterface
 {
     const EVENT_PREFIX = 'Api.ShippingStatus.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var ShippingStatusRepositoryInterface

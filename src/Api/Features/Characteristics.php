@@ -20,7 +20,6 @@ use \Neomerx\Core\Repositories\Features\CharacteristicPropertiesRepositoryInterf
 class Characteristics extends ResourceWithPropertiesApi implements CharacteristicsInterface
 {
     const EVENT_PREFIX = 'Api.Feature.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var CharacteristicRepositoryInterface

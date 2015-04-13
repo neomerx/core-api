@@ -11,7 +11,6 @@ use \Neomerx\Core\Repositories\Addresses\AddressRepositoryInterface;
 class Stores extends SingleResourceApi implements StoresInterface
 {
     const EVENT_PREFIX = 'Api.Store.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var StoreRepositoryInterface

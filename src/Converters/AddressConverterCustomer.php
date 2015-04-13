@@ -6,8 +6,6 @@ use \Neomerx\Core\Exceptions\InvalidArgumentException;
 
 class AddressConverterCustomer extends AddressConverterGeneric
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format model to array representation.
      *

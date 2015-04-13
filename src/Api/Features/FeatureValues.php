@@ -20,7 +20,6 @@ use \Neomerx\Core\Repositories\Features\ValuePropertiesRepositoryInterface;
 class FeatureValues extends ResourceWithPropertiesApi implements FeatureValuesInterface
 {
     const EVENT_PREFIX = 'Api.FeatureValue.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var ValueRepositoryInterface

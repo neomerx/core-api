@@ -9,7 +9,6 @@ use \Neomerx\Core\Repositories\Images\ImageFormatRepositoryInterface;
 class ImageFormats extends SingleResourceApi implements ImageFormatsInterface
 {
     const EVENT_PREFIX = 'Api.ImageFormat.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var ImageFormatRepositoryInterface

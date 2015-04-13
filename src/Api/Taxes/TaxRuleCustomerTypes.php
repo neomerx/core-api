@@ -14,7 +14,6 @@ use \Neomerx\Core\Repositories\Taxes\TaxRuleCustomerTypeRepositoryInterface;
 class TaxRuleCustomerTypes extends DependentSingleResourceApi implements TaxRuleCustomerTypesInterface
 {
     const EVENT_PREFIX = 'Api.TaxRuleCustomerType.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var TaxRuleRepositoryInterface

@@ -15,7 +15,6 @@ use \Neomerx\Core\Repositories\Currencies\CurrencyPropertiesRepositoryInterface;
 class Currencies extends ResourceWithPropertiesApi implements CurrenciesInterface
 {
     const EVENT_PREFIX = 'Api.Currency.';
-    const BIND_NAME = __CLASS__;
 
     /**
      * @var CurrencyRepositoryInterface

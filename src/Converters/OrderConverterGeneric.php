@@ -10,8 +10,6 @@ use \Neomerx\CoreApi\Api\Orders\OrdersInterface as Api;
 
 class OrderConverterGeneric implements ConverterInterface
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * @var ConverterInterface
      */

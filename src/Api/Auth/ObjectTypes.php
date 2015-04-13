@@ -9,7 +9,6 @@ use \Neomerx\Core\Repositories\Auth\ObjectTypeRepositoryInterface;
 class ObjectTypes extends SingleResourceApi implements ObjectTypesInterface
 {
     const EVENT_PREFIX = 'Api.ObjectType.';
-    const BIND_NAME = __CLASS__;
 
     /**
      * @var ObjectTypeRepositoryInterface

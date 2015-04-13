@@ -9,8 +9,6 @@ use \Neomerx\CoreApi\Api\Products\SpecificationsInterface as Api;
 
 class SpecificationConverterGeneric implements ConverterInterface
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format model to array representation.
      *

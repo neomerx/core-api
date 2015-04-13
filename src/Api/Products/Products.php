@@ -24,7 +24,6 @@ use \Neomerx\Core\Repositories\Products\ProductPropertiesRepositoryInterface;
 class Products extends ResourceWithPropertiesApi implements ProductsInterface
 {
     const EVENT_PREFIX = 'Api.Product.';
-    const BIND_NAME    = __CLASS__;
 //
 //    /**
 //     * @var Categories

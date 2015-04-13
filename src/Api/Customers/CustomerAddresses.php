@@ -20,7 +20,6 @@ class CustomerAddresses extends SingleResourceApi implements CustomerAddressesIn
 {
     const EVENT_PREFIX              = 'Api.CustomerAddress.';
     const EVENT_POSTFIX_SET_DEFAULT = 'setDefault';
-    const BIND_NAME                 = __CLASS__;
 
     /**
      * @var CustomerAddressRepositoryInterface

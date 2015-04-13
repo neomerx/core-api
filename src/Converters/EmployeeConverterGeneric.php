@@ -5,8 +5,6 @@ use \Neomerx\Core\Models\Employee;
 
 class EmployeeConverterGeneric implements ConverterInterface
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format model to array representation.
      *

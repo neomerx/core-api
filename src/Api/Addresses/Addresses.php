@@ -10,7 +10,6 @@ use \Neomerx\Core\Repositories\Territories\RegionRepositoryInterface;
 class Addresses extends SingleResourceApi implements AddressesInterface
 {
     const EVENT_PREFIX = 'Api.Address.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var AddressRepositoryInterface

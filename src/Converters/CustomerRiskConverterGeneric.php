@@ -6,8 +6,6 @@ use \Neomerx\Core\Exceptions\InvalidArgumentException;
 
 class CustomerRiskConverterGeneric implements ConverterInterface
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format model to array representation.
      *

@@ -14,7 +14,6 @@ use \Neomerx\Core\Repositories\Taxes\TaxRuleProductTypeRepositoryInterface;
 class TaxRuleProductTypes extends DependentSingleResourceApi implements TaxRuleProductTypesInterface
 {
     const EVENT_PREFIX = 'Api.TaxRuleProductType.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var TaxRuleRepositoryInterface

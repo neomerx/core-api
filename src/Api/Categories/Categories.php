@@ -21,7 +21,6 @@ use \Neomerx\Core\Repositories\Categories\CategoryPropertiesRepositoryInterface;
 class Categories extends ResourceWithPropertiesApi implements CategoriesInterface
 {
     const EVENT_PREFIX = 'Api.Category.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var CategoryRepositoryInterface

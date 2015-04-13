@@ -20,7 +20,6 @@ use \Neomerx\Core\Exceptions\InvalidArgumentException;
 class Inventories implements InventoriesInterface
 {
     const EVENT_PREFIX = 'Api.Inventories.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var Inventory

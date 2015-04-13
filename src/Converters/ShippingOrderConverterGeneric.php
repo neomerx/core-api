@@ -7,8 +7,6 @@ use \Neomerx\CoreApi\Api\ShippingOrders\ShippingOrdersInterface as Api;
 
 class ShippingOrderConverterGeneric implements ConverterInterface
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format model to array representation.
      *

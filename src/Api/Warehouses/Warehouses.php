@@ -13,7 +13,6 @@ use \Neomerx\Core\Repositories\Warehouses\WarehouseRepositoryInterface;
 class Warehouses extends SingleResourceApi implements WarehousesInterface
 {
     const EVENT_PREFIX = 'Api.Warehouse.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var WarehouseRepositoryInterface

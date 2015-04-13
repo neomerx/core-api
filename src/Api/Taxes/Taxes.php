@@ -29,7 +29,6 @@ use \Neomerx\Core\Repositories\Taxes\TaxRepositoryInterface;
 class Taxes extends SingleResourceApi implements TaxesInterface
 {
     const EVENT_PREFIX = 'Api.Tax.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var TaxRepositoryInterface

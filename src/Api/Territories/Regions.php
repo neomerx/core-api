@@ -11,7 +11,6 @@ use \Neomerx\Core\Repositories\Territories\CountryRepositoryInterface;
 class Regions extends SingleResourceApi implements RegionsInterface
 {
     const EVENT_PREFIX = 'Api.Region.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var RegionRepositoryInterface

@@ -7,8 +7,6 @@ use \Neomerx\CoreApi\Api\Carriers\CarrierTerritories as Api;
 
 class CarrierTerritoryConverterGeneric extends BasicConverterWithLanguageFilter
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format model to array representation.
      *

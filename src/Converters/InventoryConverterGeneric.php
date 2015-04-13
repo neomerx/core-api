@@ -8,8 +8,6 @@ use \Neomerx\CoreApi\Api\Inventory\InventoriesInterface as Api;
 
 class InventoryConverterGeneric implements ConverterInterface
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format model to array representation.
      *

@@ -7,8 +7,6 @@ use \Neomerx\CoreApi\Api\Carriers\CarrierPostcodes as Api;
 
 class CarrierPostcodeConverterGeneric extends BasicConverterWithLanguageFilter
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format model to array representation.
      *

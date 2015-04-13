@@ -18,7 +18,6 @@ use \Neomerx\Core\Repositories\Images\ImagePropertiesRepositoryInterface;
 class Images extends ResourceWithPropertiesApi implements ImagesInterface
 {
     const EVENT_PREFIX = 'Api.Image.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var ImageRepositoryInterface

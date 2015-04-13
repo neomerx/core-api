@@ -9,7 +9,6 @@ use \Neomerx\Core\Repositories\Products\ProductTaxTypeRepositoryInterface;
 class ProductTaxTypes extends SingleResourceApi implements ProductTaxTypesInterface
 {
     const EVENT_PREFIX = 'Api.ProductTaxType.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var ProductTaxTypeRepositoryInterface

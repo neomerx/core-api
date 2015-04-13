@@ -9,7 +9,6 @@ use \Neomerx\Core\Repositories\Languages\LanguageRepositoryInterface;
 class Languages extends SingleResourceApi implements LanguagesInterface
 {
     const EVENT_PREFIX = 'Api.Language.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var LanguageRepositoryInterface

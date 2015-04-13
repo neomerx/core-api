@@ -5,8 +5,6 @@ use \Neomerx\Core\Models\TaxRulePostcode;
 
 class TaxRulePostcodeConverterGeneric extends BasicConverterWithLanguageFilter
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format model to array representation.
      *

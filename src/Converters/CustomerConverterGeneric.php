@@ -7,8 +7,6 @@ use \Neomerx\CoreApi\Api\Customers\CustomersInterface as Api;
 
 class CustomerConverterGeneric implements ConverterInterface
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format model to array representation.
      *

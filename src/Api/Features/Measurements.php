@@ -15,7 +15,6 @@ use \Neomerx\Core\Repositories\Features\MeasurementPropertiesRepositoryInterface
 class Measurements extends ResourceWithPropertiesApi implements MeasurementsInterface
 {
     const EVENT_PREFIX = 'Api.Measurement.';
-    const BIND_NAME = __CLASS__;
 
     /**
      * @var MeasurementRepositoryInterface

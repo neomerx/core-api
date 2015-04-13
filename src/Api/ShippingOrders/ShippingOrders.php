@@ -23,7 +23,6 @@ use \Neomerx\Core\Repositories\Customers\CustomerTypeRepositoryInterface;
 class ShippingOrders extends SingleResourceApi implements ShippingOrdersInterface
 {
     const EVENT_PREFIX = 'Api.ShippingOrder.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var OrderRepositoryInterface

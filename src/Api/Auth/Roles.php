@@ -9,7 +9,6 @@ use \Neomerx\Core\Repositories\Auth\RoleRepositoryInterface;
 class Roles extends SingleResourceApi implements RolesInterface
 {
     const EVENT_PREFIX = 'Api.Role.';
-    const BIND_NAME = __CLASS__;
 
     /**
      * @var RoleRepositoryInterface

@@ -21,7 +21,6 @@ use \Neomerx\Core\Repositories\Suppliers\SupplyOrderRepositoryInterface;
 class SupplyOrders extends SingleResourceApi implements SupplyOrdersInterface
 {
     const EVENT_PREFIX = 'Api.SupplyOrder.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var SupplyOrderRepositoryInterface

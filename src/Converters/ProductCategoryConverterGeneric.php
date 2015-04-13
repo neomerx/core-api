@@ -8,8 +8,6 @@ use \Neomerx\CoreApi\Api\Products\ProductCategoriesInterface as Api;
 
 class ProductCategoryConverterGeneric implements ConverterInterface
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format model to array representation.
      *

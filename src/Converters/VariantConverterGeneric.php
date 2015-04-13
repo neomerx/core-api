@@ -7,8 +7,6 @@ use \Neomerx\CoreApi\Api\Products\VariantsInterface as Api;
 
 class VariantConverterGeneric extends ProductConverterGeneric
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * @param Variant $variant
      *

@@ -9,7 +9,6 @@ use \Neomerx\Core\Repositories\Employees\EmployeeRepositoryInterface;
 class Employees extends SingleResourceApi implements EmployeesInterface
 {
     const EVENT_PREFIX = 'Api.Employee.';
-    const BIND_NAME = __CLASS__;
 
     /**
      * @var EmployeeRepositoryInterface

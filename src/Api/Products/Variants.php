@@ -20,7 +20,6 @@ use \Neomerx\Core\Repositories\Products\VariantPropertiesRepositoryInterface;
 class Variants extends ResourceWithPropertiesApi implements VariantsInterface
 {
     const EVENT_PREFIX = 'Api.Variant.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var VariantRepositoryInterface

@@ -8,8 +8,6 @@ use \Neomerx\CoreApi\Api\Carriers\CarrierCustomerTypes as Api;
 
 class CarrierCustomerTypeConverterGeneric extends BasicConverterWithLanguageFilter
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format model to array representation.
      *

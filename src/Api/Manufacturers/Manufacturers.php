@@ -19,7 +19,6 @@ use \Neomerx\Core\Repositories\Manufacturers\ManufacturerPropertiesRepositoryInt
 class Manufacturers extends ResourceWithPropertiesApi implements ManufacturersInterface
 {
     const EVENT_PREFIX = 'Api.Manufacturer.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var ManufacturerRepositoryInterface

@@ -7,8 +7,6 @@ use \Neomerx\CoreApi\Api\Territories\RegionsInterface;
 
 class AddressConverterGeneric implements ConverterInterface
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format model to array representation.
      *

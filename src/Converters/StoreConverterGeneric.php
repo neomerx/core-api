@@ -5,8 +5,6 @@ use \Neomerx\Core\Models\Store;
 
 class StoreConverterGeneric implements ConverterInterface
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format model to array representation.
      *

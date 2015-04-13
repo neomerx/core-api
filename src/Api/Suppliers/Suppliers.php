@@ -19,7 +19,6 @@ use \Neomerx\Core\Repositories\Suppliers\SupplierPropertiesRepositoryInterface;
 class Suppliers extends ResourceWithPropertiesApi implements SuppliersInterface
 {
     const EVENT_PREFIX = 'Api.Supplier.';
-    const BIND_NAME    = __CLASS__;
 
 //    /**
 //     * @var Supplier

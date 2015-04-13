@@ -17,8 +17,6 @@ class ProductConverterSmallDescription extends BasicConverterWithLanguageFilter
 {
     use LanguagePropertiesTrait;
 
-    const BIND_NAME = __CLASS__;
-
     /**
      * @var ConverterInterface
      */

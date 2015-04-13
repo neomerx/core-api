@@ -47,8 +47,6 @@ class Orders extends SingleResourceApi implements OrdersInterface
 //    use CreateTrait;
 //    use ParseInputTrait;
 //
-//    const BIND_NAME = __CLASS__;
-//
 //    /**
 //     * @var Order
 //     */

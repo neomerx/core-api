@@ -6,8 +6,6 @@ use \Neomerx\CoreApi\Api\Taxes\TaxRuleTerritories as Api;
 
 class TaxRuleTerritoryConverterGeneric extends BasicConverterWithLanguageFilter
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format model to array representation.
      *

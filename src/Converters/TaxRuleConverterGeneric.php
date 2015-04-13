@@ -7,8 +7,6 @@ use \Neomerx\CoreApi\Api\Taxes\TaxRulesInterface as Api;
 
 class TaxRuleConverterGeneric implements ConverterInterface
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format model to array representation.
      *

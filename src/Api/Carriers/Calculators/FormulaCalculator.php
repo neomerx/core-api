@@ -15,7 +15,6 @@ use \Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 
 class FormulaCalculator implements TariffCalculatorInterface
 {
-    const BIND_NAME = __CLASS__;
     const EXPRESSION_LANGUAGE_CLASS = ExpressionLanguage::class;
 
     const PARAM_CART         = 'cart';

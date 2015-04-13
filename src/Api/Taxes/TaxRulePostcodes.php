@@ -12,7 +12,6 @@ use \Neomerx\Core\Repositories\Taxes\TaxRulePostcodeRepositoryInterface;
 class TaxRulePostcodes extends DependentSingleResourceApi implements TaxRulePostcodesInterface
 {
     const EVENT_PREFIX = 'Api.TaxRulePostcode.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var TaxRuleRepositoryInterface

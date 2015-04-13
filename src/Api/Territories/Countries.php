@@ -20,7 +20,6 @@ use \Neomerx\Core\Repositories\Territories\CountryPropertiesRepositoryInterface;
 class Countries extends ResourceWithPropertiesApi implements CountriesInterface
 {
     const EVENT_PREFIX = 'Api.Country.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var CountryRepositoryInterface

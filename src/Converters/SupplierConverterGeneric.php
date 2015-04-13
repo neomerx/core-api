@@ -11,8 +11,6 @@ class SupplierConverterGeneric extends BasicConverterWithLanguageFilter
 {
     use LanguagePropertiesTrait;
 
-    const BIND_NAME = __CLASS__;
-
     /**
      * @var ConverterInterface
      */

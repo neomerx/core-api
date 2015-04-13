@@ -7,8 +7,6 @@ use \Neomerx\CoreApi\Api\Taxes\TaxRuleProductTypesInterface as Api;
 
 class TaxRuleProductTypeConverterGeneric extends BasicConverterWithLanguageFilter
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format model to array representation.
      *

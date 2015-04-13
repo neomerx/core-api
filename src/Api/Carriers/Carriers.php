@@ -20,7 +20,6 @@ use \Neomerx\Core\Repositories\Carriers\CarrierPropertiesRepositoryInterface;
 class Carriers extends ResourceWithPropertiesApi implements CarriersInterface
 {
     const EVENT_PREFIX = 'Api.Carrier.';
-    const BIND_NAME = __CLASS__;
 
     /**
      * @var CarrierRepositoryInterface

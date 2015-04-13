@@ -6,8 +6,6 @@ use \Neomerx\Core\Exceptions\InvalidArgumentException;
 
 class ProductImageConverterGeneric extends ImageConverterGeneric
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format model to array representation.
      *

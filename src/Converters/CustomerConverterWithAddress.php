@@ -7,8 +7,6 @@ use \Neomerx\CoreApi\Api\Customers\CustomersInterface as Api;
 
 class CustomerConverterWithAddress extends CustomerConverterGeneric
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * @var ConverterInterface
      */

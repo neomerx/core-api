@@ -10,7 +10,6 @@ use \Neomerx\Core\Repositories\Orders\OrderStatusRepositoryInterface;
 class OrderStatuses extends SingleResourceApi implements OrderStatusesInterface
 {
     const EVENT_PREFIX = 'Api.OrderStatus.';
-    const BIND_NAME    = __CLASS__;
 
 //    /**
 //     * @var OrderStatus

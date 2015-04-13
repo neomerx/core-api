@@ -7,8 +7,6 @@ use \Neomerx\CoreApi\Api\Warehouses\WarehousesInterface as Api;
 
 class WarehouseConverterGeneric implements ConverterInterface
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format model to array representation.
      *

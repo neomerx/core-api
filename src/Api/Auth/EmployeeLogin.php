@@ -5,8 +5,6 @@ use \Neomerx\Core\Models\Employee;
 
 class EmployeeLogin implements EmployeeLoginInterface
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * {@inheritdoc}
      */

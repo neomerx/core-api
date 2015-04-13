@@ -9,7 +9,6 @@ use \Neomerx\Core\Repositories\Customers\CustomerRiskRepositoryInterface;
 class CustomerRisks extends SingleResourceApi implements CustomerRisksInterface
 {
     const EVENT_PREFIX = 'Api.CustomerRisk.';
-    const BIND_NAME    = __CLASS__;
 
     /**
      * @var CustomerRiskRepositoryInterface

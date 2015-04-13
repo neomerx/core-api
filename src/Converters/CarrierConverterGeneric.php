@@ -9,8 +9,6 @@ class CarrierConverterGeneric extends BasicConverterWithLanguageFilter
 {
     use LanguagePropertiesTrait;
 
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format model to array representation.
      *

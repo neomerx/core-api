@@ -12,8 +12,6 @@ class SpecificationCollectionConverterGeneric extends BasicConverterWithLanguage
 {
     use LanguagePropertiesTrait;
 
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format specification collection to array representation.
      *

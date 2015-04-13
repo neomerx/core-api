@@ -6,8 +6,6 @@ use \Neomerx\CoreApi\Api\Auth\RoleObjectTypesInterface as Api;
 
 class RoleObjectTypeConverterGeneric implements ConverterInterface
 {
-    const BIND_NAME = __CLASS__;
-
     /**
      * Format model to array representation.
      *
