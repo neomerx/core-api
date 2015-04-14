@@ -3,6 +3,9 @@
 use \Neomerx\Core\Models\Address;
 use \Neomerx\CoreApi\Events\EventArgs;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class AddressArgs extends EventArgs
 {
     /**

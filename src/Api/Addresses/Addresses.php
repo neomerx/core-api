@@ -7,8 +7,12 @@ use \Neomerx\CoreApi\Api\SingleResourceApi;
 use \Neomerx\Core\Repositories\Addresses\AddressRepositoryInterface;
 use \Neomerx\Core\Repositories\Territories\RegionRepositoryInterface;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class Addresses extends SingleResourceApi implements AddressesInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.Address.';
 
     /**

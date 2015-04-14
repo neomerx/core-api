@@ -3,12 +3,20 @@
 use \Neomerx\Core\Models\Address;
 use \Neomerx\CoreApi\Api\CrudInterface;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 interface AddressesInterface extends CrudInterface
 {
+    /** Parameter key */
     const PARAM_ADDRESS1    = Address::FIELD_ADDRESS1;
+    /** Parameter key */
     const PARAM_ADDRESS2    = Address::FIELD_ADDRESS2;
+    /** Parameter key */
     const PARAM_CITY        = Address::FIELD_CITY;
+    /** Parameter key */
     const PARAM_POSTCODE    = Address::FIELD_POSTCODE;
+    /** Parameter key */
     const PARAM_REGION_CODE = 'region_code';
 
     /**
