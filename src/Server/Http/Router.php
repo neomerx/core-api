@@ -3,6 +3,10 @@
 use \Route;
 use \Neomerx\CoreApi\Server\Http\Controllers\EmployeeLoginControllerJson;
 
+/**
+ * Class Router
+ * @package Neomerx\CoreApi
+ */
 class Router
 {
     /**
@@ -30,7 +34,7 @@ class Router
             include __DIR__ . '/Routes/supply-orders.php';
             include __DIR__ . '/Routes/taxes.php';
 
-            Route::get('logout', ['uses' => EmployeeLoginControllerJson::class.'@logout']);
+            Route::delete('logout', ['uses' => EmployeeLoginControllerJson::class.'@logout']);
         };
     }
 }

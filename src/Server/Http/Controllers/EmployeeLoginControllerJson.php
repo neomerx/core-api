@@ -6,16 +6,23 @@ use \Response;
 use \Neomerx\CoreApi\Api\Facades\EmployeeLogin;
 use \Neomerx\CoreApi\Api\Auth\EmployeeLoginInterface;
 use \Symfony\Component\HttpFoundation\Response as SymfonyResponse;
+use \Illuminate\Contracts\Auth\Authenticatable as AuthenticatableInterface;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 final class EmployeeLoginControllerJson extends BaseController
 {
+    /** Auth token key */
+    const TOKEN_KEY = 'token';
+
     /**
      * @return \Illuminate\Http\JsonResponse
      */
     final public function login()
     {
-        $login    = Input::get('login');
-        $password = Input::get('password');
+        $login    = Input::json('login');
+        $password = Input::json('password');
 
         return $this->tryAndCatchWrapper('loginImpl', [$login, $password]);
     }
@@ -38,10 +45,13 @@ final class EmployeeLoginControllerJson extends BaseController
     {
         $reply = EmployeeLogin::login($login, $password);
         $token = null;
+        /** @var AuthenticatableInterface $user */
         if ($reply === EmployeeLoginInterface::CODE_OK && ($user = Auth::user()) !== null) {
-            $token = (object)['token' => $user->getRememberToken()];
+            $token = (object)[self::TOKEN_KEY => $user->getRememberToken()];
         }
-        return [$token, $this->convertReplyToHttpCode($reply)];
+        $reply = ($reply === EmployeeLoginInterface::CODE_OK ?
+            SymfonyResponse::HTTP_CREATED : SymfonyResponse::HTTP_UNAUTHORIZED);
+        return [$token, $reply];
     }
 
     /**
@@ -50,32 +60,9 @@ final class EmployeeLoginControllerJson extends BaseController
     protected function logoutImpl()
     {
         $reply = EmployeeLogin::logout();
-        return [null, $this->convertReplyToHttpCode($reply)];
-    }
-
-    /**
-     * @param int $reply
-     *
-     * @return int
-     */
-    private function convertReplyToHttpCode($reply)
-    {
-        switch ($reply)
-        {
-            case EmployeeLoginInterface::CODE_OK:
-                $code = SymfonyResponse::HTTP_OK;
-                break;
-            case EmployeeLoginInterface::CODE_ERROR:
-                $code = SymfonyResponse::HTTP_UNAUTHORIZED;
-                break;
-            case EmployeeLoginInterface::CODE_TOO_MANY_ATTEMPTS:
-                $code = SymfonyResponse::HTTP_TOO_MANY_REQUESTS;
-                break;
-            default:
-                $code = SymfonyResponse::HTTP_BAD_REQUEST;
-                break;
-        }
-        return $code;
+        $reply = ($reply === EmployeeLoginInterface::CODE_OK ?
+            SymfonyResponse::HTTP_NO_CONTENT : SymfonyResponse::HTTP_UNAUTHORIZED);
+        return [null, $reply];
     }
 
     /**
