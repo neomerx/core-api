@@ -1,0 +1,113 @@
+FORMAT: 1A
+
+# API Reference
+Neomerx is an eCommerce solution. Core API provides REST access to backend of the system which could be used from web applications, mobile devices and etc.
+
+## URL structure
+URL structure is ```{schema}://{domain}/api/v1/{slug}```
+
+|      |Description                                                           |
+|------|----------------------------------------------------------------------|
+|schema|```http``` or ```https```                                             |
+|domain|The domain is your Neomerx backend domain.                            |
+|slug  |Supported slugs could be found below in service endpoint descriptions.|
+
+## HTTP verbs
+The following verbs are used for operations.
+
+|Verb        |Description                                                                                   |
+|------------|----------------------------------------------------------------------------------------------|
+|```GET```   |Used to select one or more items. Success returns 200 status code with item(s) in body.       |
+|```POST```  |Used to create a new item. Success returns 201 status code with newly created item ID in body.|
+|```PUT```   |Used to update an item. Success returns 200 status code with updated item in body.            |
+|```DELETE```|Used to delete an item. Success returns 204 status code with empty body.                      |
+
+## HTTP headers
+API requires the following headers to be set
+
+|Header key            |Header value         |
+|----------------------|---------------------|
+|```X-Requested-With```|```XMLHttpRequest``` |
+|```authToken```       |Authentication token should be set for all protected routes. How to get the token could be found in *Login* section below.|
+
+# Group Login & logout
+
+## Login [/login]
+Before you calling API you need to have an authentication token. You login to get one.
+
+### Login [POST]
+
++ Request Login and create authentication token (application/json)
+
+    + Headers
+    
+            X-Requested-With: XMLHttpRequest
+
+    + Body
+    
+            {
+                "login": "your login",
+                "password": "your password"
+            }
+
++ Response 201 (application/json)
+
+        {
+            "token": "sQmbOwjsMqN4z1T0OljyReb5hKNoD2JzIL3NwTYemgQ9JmZ0FRQOhVoX7SAZ"
+        }
+        
+## Logout [/logout]
+
+### Logout [DELETE]
+
++ Request 
+
+    + Headers
+    
+            X-Requested-With: XMLHttpRequest
+            authToken: your token
+
++ Response 204 (application/json)
+
+
+# Group Notes
+Notes related resources of the **Notes API**
+
+## Notes Collection [/notes]
+### List all Notes [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "title": "Jogging in park"
+        }, {
+          "id": 2, "title": "Pick-up posters from post-office"
+        }]
+
+### Create a Note [POST]
++ Request (application/json)
+
+        { "title": "Buy cheese and bread for breakfast." }
+
++ Response 201 (application/json)
+
+        { "id": 3, "title": "Buy cheese and bread for breakfast." }
+
+## Note [/notes/{id}]
+A single Note object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
+
+### Retrieve a Note [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "title": "Pick-up posters from post-office" }
+
+### Remove a Note [DELETE]
++ Response 204
