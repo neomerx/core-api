@@ -37,6 +37,9 @@ Before you calling API you need to have an authentication token. You login to ge
 
 ### Login [POST]
 
++ login (string) - Your login.
++ password (string) - Your password.
+
 + Request Login and create authentication token (application/json)
 
     + Headers
@@ -46,7 +49,7 @@ Before you calling API you need to have an authentication token. You login to ge
     + Body
     
             {
-                "login": "your login",
+                "login":    "your login",
                 "password": "your password"
             }
 
