@@ -6,8 +6,12 @@ use \Neomerx\Core\Support\SearchGrammar;
 use \Neomerx\CoreApi\Api\SingleResourceApi;
 use \Neomerx\Core\Repositories\Auth\RoleRepositoryInterface;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class Roles extends SingleResourceApi implements RolesInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.Role.';
 
     /**

@@ -3,6 +3,9 @@
 use \Neomerx\Core\Models\ObjectType;
 use \Neomerx\CoreApi\Events\EventArgs;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class ObjectTypeArgs extends EventArgs
 {
     /**

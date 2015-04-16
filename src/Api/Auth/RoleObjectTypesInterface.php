@@ -5,13 +5,22 @@ use \Neomerx\Core\Models\RoleObjectType;
 use \Neomerx\CoreApi\Api\CrudInterface;
 use \Illuminate\Database\Eloquent\Collection;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 interface RoleObjectTypesInterface extends CrudInterface
 {
+    /** Parameter key */
     const PARAM_ID         = RoleObjectType::FIELD_ID;
+    /** Parameter key */
     const PARAM_ID_ROLE    = RoleObjectType::FIELD_ID_ROLE;
+    /** Parameter key */
     const PARAM_ID_TYPE    = RoleObjectType::FIELD_ID_TYPE;
+    /** Parameter key */
     const PARAM_ALLOW_MASK = RoleObjectType::FIELD_ALLOW_MASK;
+    /** Parameter key */
     const PARAM_DENY_MASK  = RoleObjectType::FIELD_DENY_MASK;
+    /** Parameter key */
     const PARAM_ROLE_CODE  = 'role_code';
 
     /**

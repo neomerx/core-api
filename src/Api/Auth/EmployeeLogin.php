@@ -3,6 +3,9 @@
 use \Auth;
 use \Neomerx\Core\Models\Employee;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class EmployeeLogin implements EmployeeLoginInterface
 {
     /**

@@ -6,8 +6,12 @@ use \Neomerx\Core\Support\SearchGrammar;
 use \Neomerx\CoreApi\Api\SingleResourceApi;
 use \Neomerx\Core\Repositories\Auth\ObjectTypeRepositoryInterface;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class ObjectTypes extends SingleResourceApi implements ObjectTypesInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.ObjectType.';
 
     /**

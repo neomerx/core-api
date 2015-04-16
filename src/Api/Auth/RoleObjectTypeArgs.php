@@ -3,6 +3,9 @@
 use \Neomerx\CoreApi\Events\EventArgs;
 use \Neomerx\Core\Models\RoleObjectType;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class RoleObjectTypeArgs extends EventArgs
 {
     /**

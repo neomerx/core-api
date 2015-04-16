@@ -4,9 +4,14 @@ use \Neomerx\Core\Models\Role;
 use \Neomerx\CoreApi\Api\CrudInterface;
 use \Illuminate\Database\Eloquent\Collection;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 interface RolesInterface extends CrudInterface
 {
+    /** Parameter key */
     const PARAM_CODE        = Role::FIELD_CODE;
+    /** Parameter key */
     const PARAM_DESCRIPTION = Role::FIELD_DESCRIPTION;
 
     /**

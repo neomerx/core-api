@@ -10,8 +10,12 @@ use \Neomerx\Core\Repositories\Auth\RoleRepositoryInterface;
 use \Neomerx\Core\Repositories\Auth\ObjectTypeRepositoryInterface;
 use \Neomerx\Core\Repositories\Auth\RoleObjectTypeRepositoryInterface;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class RoleObjectTypes extends DependentSingleResourceApi implements RoleObjectTypesInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.RoleObjectType.';
 
     /**
