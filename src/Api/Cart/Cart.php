@@ -5,6 +5,9 @@ use \Neomerx\Core\Models\Product;
 use \Illuminate\Support\Collection;
 use \Neomerx\Core\Exceptions\InvalidArgumentException;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class Cart extends Collection
 {
     /**

@@ -4,6 +4,9 @@ use \Neomerx\Core\Support as S;
 use \Neomerx\Core\Models\Variant;
 use \Neomerx\Core\Exceptions\InvalidArgumentException;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class CartItem
 {
     /**
