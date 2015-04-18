@@ -16,10 +16,14 @@ use \Neomerx\Core\Repositories\Categories\CategoryRepositoryInterface;
 use \Neomerx\Core\Repositories\Categories\CategoryPropertiesRepositoryInterface;
 
 /**
+ * @package Neomerx\CoreApi
+ *
+ * @SuppressWarnings(PHPMD.TooManyMethods)
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class Categories extends ResourceWithPropertiesApi implements CategoriesInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.Category.';
 
     /**

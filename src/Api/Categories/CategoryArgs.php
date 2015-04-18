@@ -3,6 +3,9 @@
 use \Neomerx\Core\Models\Category;
 use \Neomerx\CoreApi\Events\EventArgs;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class CategoryArgs extends EventArgs
 {
     /**
