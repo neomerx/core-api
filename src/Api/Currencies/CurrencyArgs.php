@@ -3,6 +3,9 @@
 use \Neomerx\Core\Models\Currency;
 use \Neomerx\CoreApi\Events\EventArgs;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class CurrencyArgs extends EventArgs
 {
     /**

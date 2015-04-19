@@ -12,8 +12,12 @@ use \Neomerx\Core\Repositories\Languages\LanguageRepositoryInterface;
 use \Neomerx\Core\Repositories\Currencies\CurrencyRepositoryInterface;
 use \Neomerx\Core\Repositories\Currencies\CurrencyPropertiesRepositoryInterface;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class Currencies extends ResourceWithPropertiesApi implements CurrenciesInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.Currency.';
 
     /**

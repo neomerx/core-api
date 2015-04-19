@@ -5,13 +5,22 @@ use \Neomerx\CoreApi\Api\CrudInterface;
 use \Neomerx\Core\Models\CurrencyProperties;
 use \Illuminate\Database\Eloquent\Collection;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 interface CurrenciesInterface extends CrudInterface
 {
+    /** Parameter key */
     const PARAM_ID                     = Currency::FIELD_ID;
+    /** Parameter key */
     const PARAM_CODE                   = Currency::FIELD_CODE;
+    /** Parameter key */
     const PARAM_DECIMAL_DIGITS         = Currency::FIELD_DECIMAL_DIGITS;
+    /** Parameter key */
     const PARAM_PROPERTIES             = Currency::FIELD_PROPERTIES;
+    /** Parameter key */
     const PARAM_PROPERTIES_NAME        = CurrencyProperties::FIELD_NAME;
+    /** Parameter key */
     const PARAM_PROPERTIES_DESCRIPTION = CurrencyProperties::FIELD_DESCRIPTION;
 
     /**

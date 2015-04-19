@@ -5,16 +5,27 @@ use \Neomerx\Core\Repositories\RepositoryInterface;
 use \Neomerx\Core\Repositories\Territories\RegionRepositoryInterface;
 use \Neomerx\Core\Repositories\Territories\CountryRepositoryInterface;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class TerritoryParser
 {
+    /** Parameter key */
     const PARAM_CODE   = 'territory_code';
+    /** Parameter key */
     const PARAM_TYPE   = 'territory_type';
+    /** Parameter value */
     const TYPE_COUNTRY = 'country';
+    /** Parameter value */
     const TYPE_REGION  = 'region';
 
+    /** Data is a region */
     const PARSED_DATA_REGION        = 0;
+    /** Data is a country */
     const PARSED_DATA_COUNTRY       = 1;
+    /** Data is all region */
     const PARSED_DATA_ALL_REGIONS   = 2;
+    /** Data is all countries */
     const PARSED_DATA_ALL_COUNTRIES = 3;
 
     /**
