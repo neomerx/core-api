@@ -8,8 +8,12 @@ use \Neomerx\CoreApi\Api\SingleResourceApi;
 use \Neomerx\Core\Repositories\Stores\StoreRepositoryInterface;
 use \Neomerx\Core\Repositories\Addresses\AddressRepositoryInterface;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class Stores extends SingleResourceApi implements StoresInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.Store.';
 
     /**

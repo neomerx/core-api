@@ -3,6 +3,9 @@
 use \Neomerx\Core\Models\Store;
 use \Neomerx\CoreApi\Events\EventArgs;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class StoreArgs extends EventArgs
 {
     /**

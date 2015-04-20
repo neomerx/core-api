@@ -4,10 +4,16 @@ use \Neomerx\Core\Models\Store;
 use \Neomerx\CoreApi\Api\CrudInterface;
 use \Illuminate\Database\Eloquent\Collection;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 interface StoresInterface extends CrudInterface
 {
+    /** Parameter key */
     const PARAM_CODE       = Store::FIELD_CODE;
+    /** Parameter key */
     const PARAM_NAME       = Store::FIELD_NAME;
+    /** Parameter key */
     const PARAM_ID_ADDRESS = Store::FIELD_ID_ADDRESS;
 
     /**
