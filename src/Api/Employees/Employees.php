@@ -6,8 +6,12 @@ use \Neomerx\Core\Support\SearchGrammar;
 use \Neomerx\CoreApi\Api\SingleResourceApi;
 use \Neomerx\Core\Repositories\Employees\EmployeeRepositoryInterface;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class Employees extends SingleResourceApi implements EmployeesInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.Employee.';
 
     /**

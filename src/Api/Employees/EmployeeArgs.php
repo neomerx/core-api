@@ -3,6 +3,9 @@
 use \Neomerx\Core\Models\Employee;
 use \Neomerx\CoreApi\Events\EventArgs;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class EmployeeArgs extends EventArgs
 {
     /**

@@ -10,8 +10,12 @@ use \Neomerx\Core\Repositories\Auth\RoleRepositoryInterface;
 use \Neomerx\Core\Repositories\Employees\EmployeeRepositoryInterface;
 use \Neomerx\Core\Repositories\Employees\EmployeeRoleRepositoryInterface;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class EmployeeRoles extends DependentSingleResourceApi implements EmployeeRolesInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.EmployeeRole.';
 
     /**
