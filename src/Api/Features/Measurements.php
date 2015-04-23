@@ -12,8 +12,12 @@ use \Neomerx\Core\Repositories\Languages\LanguageRepositoryInterface;
 use \Neomerx\Core\Repositories\Features\MeasurementRepositoryInterface;
 use \Neomerx\Core\Repositories\Features\MeasurementPropertiesRepositoryInterface;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class Measurements extends ResourceWithPropertiesApi implements MeasurementsInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.Measurement.';
 
     /**

@@ -3,6 +3,9 @@
 use \Neomerx\CoreApi\Events\EventArgs;
 use \Neomerx\Core\Models\CharacteristicValue;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class FeatureValueArgs extends EventArgs
 {
     /**

@@ -15,10 +15,13 @@ use \Neomerx\Core\Repositories\Features\CharacteristicRepositoryInterface;
 use \Neomerx\Core\Repositories\Features\ValuePropertiesRepositoryInterface;
 
 /**
+ * @package Neomerx\CoreApi
+ *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class FeatureValues extends ResourceWithPropertiesApi implements FeatureValuesInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.FeatureValue.';
 
     /**

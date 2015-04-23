@@ -3,6 +3,9 @@
 use \Neomerx\CoreApi\Events\EventArgs;
 use \Neomerx\Core\Models\Characteristic;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class CharacteristicArgs extends EventArgs
 {
     /**

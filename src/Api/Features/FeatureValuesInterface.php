@@ -5,11 +5,18 @@ use \Neomerx\Core\Models\CharacteristicValue;
 use \Illuminate\Database\Eloquent\Collection;
 use Neomerx\Core\Models\CharacteristicValueProperties;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 interface FeatureValuesInterface extends CrudInterface
 {
+    /** Parameter key */
     const PARAM_CODE                = CharacteristicValue::FIELD_CODE;
+    /** Parameter key */
     const PARAM_CHARACTERISTIC_CODE = 'characteristic_code';
+    /** Parameter key */
     const PARAM_PROPERTIES          = CharacteristicValue::FIELD_PROPERTIES;
+    /** Parameter key */
     const PARAM_PROPERTIES_VALUE    = CharacteristicValueProperties::FIELD_VALUE;
 
     /**

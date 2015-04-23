@@ -3,6 +3,9 @@
 use \Neomerx\CoreApi\Events\EventArgs;
 use \Neomerx\Core\Models\Measurement;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class MeasurementArgs extends EventArgs
 {
     /**

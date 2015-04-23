@@ -5,10 +5,16 @@ use \Neomerx\Core\Models\Measurement;
 use \Illuminate\Database\Eloquent\Collection;
 use Neomerx\Core\Models\MeasurementProperties;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 interface MeasurementsInterface extends CrudInterface
 {
+    /** Parameter key */
     const PARAM_CODE            = Measurement::FIELD_CODE;
+    /** Parameter key */
     const PARAM_PROPERTIES      = Measurement::FIELD_PROPERTIES;
+    /** Parameter key */
     const PARAM_PROPERTIES_NAME = MeasurementProperties::FIELD_NAME;
 
     /**

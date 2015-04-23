@@ -15,10 +15,13 @@ use \Neomerx\Core\Repositories\Features\CharacteristicRepositoryInterface;
 use \Neomerx\Core\Repositories\Features\CharacteristicPropertiesRepositoryInterface;
 
 /**
+ * @package Neomerx\CoreApi
+ *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class Characteristics extends ResourceWithPropertiesApi implements CharacteristicsInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.Feature.';
 
     /**
