@@ -15,8 +15,14 @@ use \Neomerx\Core\Repositories\Images\ImageRepositoryInterface;
 use \Neomerx\Core\Repositories\Languages\LanguageRepositoryInterface;
 use \Neomerx\Core\Repositories\Images\ImagePropertiesRepositoryInterface;
 
+/**
+ * @package Neomerx\CoreApi
+ *
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ */
 class Images extends ResourceWithPropertiesApi implements ImagesInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.Image.';
 
     /**

@@ -3,6 +3,9 @@
 use \Neomerx\CoreApi\Events\EventArgs;
 use \Neomerx\Core\Models\ImageFormat;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class ImageFormatArgs extends EventArgs
 {
     /**

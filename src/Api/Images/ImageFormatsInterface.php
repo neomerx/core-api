@@ -4,10 +4,16 @@ use \Neomerx\CoreApi\Api\CrudInterface;
 use \Neomerx\Core\Models\ImageFormat;
 use \Illuminate\Database\Eloquent\Collection;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 interface ImageFormatsInterface extends CrudInterface
 {
+    /** Parameter key */
     const PARAM_CODE   = ImageFormat::FIELD_CODE;
+    /** Parameter key */
     const PARAM_WIDTH  = ImageFormat::FIELD_WIDTH;
+    /** Parameter key */
     const PARAM_HEIGHT = ImageFormat::FIELD_HEIGHT;
 
     /**

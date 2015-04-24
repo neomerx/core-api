@@ -6,8 +6,12 @@ use \Neomerx\Core\Support\SearchGrammar;
 use \Neomerx\CoreApi\Api\SingleResourceApi;
 use \Neomerx\Core\Repositories\Images\ImageFormatRepositoryInterface;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class ImageFormats extends SingleResourceApi implements ImageFormatsInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.ImageFormat.';
 
     /**

@@ -3,6 +3,9 @@
 use \Neomerx\Core\Models\Image;
 use \Neomerx\CoreApi\Events\EventArgs;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class ImageArgs extends EventArgs
 {
     /**

@@ -5,12 +5,20 @@ use \Neomerx\CoreApi\Api\CrudInterface;
 use \Neomerx\Core\Models\ImageProperties;
 use \Illuminate\Database\Eloquent\Collection;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 interface ImagesInterface extends CrudInterface
 {
+    /** Parameter key */
     const PARAM_ORIGINAL_FILE_NAME = Image::FIELD_ORIGINAL_FILE;
+    /** Parameter key */
     const PARAM_ORIGINAL_FILE_DATA = 'uploaded_data';
+    /** Parameter key */
     const PARAM_PATHS              = Image::FIELD_PATHS;
+    /** Parameter key */
     const PARAM_PROPERTIES         = Image::FIELD_PROPERTIES;
+    /** Parameter key */
     const PARAM_PROPERTIES_ALT     = ImageProperties::FIELD_ALT;
 
     /**
