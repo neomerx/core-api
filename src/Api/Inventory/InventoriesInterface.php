@@ -9,11 +9,17 @@ use \Neomerx\Core\Models\Warehouse;
  */
 interface InventoriesInterface
 {
+    /** Parameter key */
     const PARAM_SKU            = 'sku';
+    /** Parameter key */
     const PARAM_WAREHOUSE_CODE = 'warehouse_code';
+    /** Parameter key */
     const PARAM_IN             = Inventory::FIELD_IN;
+    /** Parameter key */
     const PARAM_OUT            = Inventory::FIELD_OUT;
+    /** Parameter key */
     const PARAM_RESERVED       = Inventory::FIELD_RESERVED;
+    /** Parameter key */
     const PARAM_QUANTITY       = Inventory::FIELD_QUANTITY;
 
     /**

@@ -1,6 +1,5 @@
 <?php namespace Neomerx\CoreApi\Api\Inventory;
 
-use Neomerx\Core\Repositories\Inventories\InventoryRepositoryInterface;
 use \Neomerx\Core\Support as S;
 use \Neomerx\CoreApi\Events\Event;
 use \Neomerx\Core\Models\Product;
@@ -12,13 +11,17 @@ use \Illuminate\Support\Facades\DB;
 use \Neomerx\Core\Models\SupplyOrder;
 use \Neomerx\Core\Exceptions\LogicException;
 use \Neomerx\Core\Exceptions\InvalidArgumentException;
+use \Neomerx\Core\Repositories\Inventories\InventoryRepositoryInterface;
 
 /**
+ * @package Neomerx\CoreApi
+ *
  * @SuppressWarnings(PHPMD.TooManyMethods)
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class Inventories implements InventoriesInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.Inventories.';
 
     /**

@@ -3,6 +3,9 @@
 use \Neomerx\CoreApi\Events\EventArgs;
 use \Neomerx\Core\Models\Inventory;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class InventoryArgs extends EventArgs
 {
     /**
