@@ -4,6 +4,9 @@ use \Neomerx\Core\Models\Variant;
 use \Neomerx\Core\Models\Inventory;
 use \Neomerx\Core\Models\Warehouse;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 interface InventoriesInterface
 {
     const PARAM_SKU            = 'sku';
