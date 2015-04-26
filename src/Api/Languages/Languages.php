@@ -6,8 +6,12 @@ use \Neomerx\Core\Support\SearchGrammar;
 use \Neomerx\CoreApi\Api\SingleResourceApi;
 use \Neomerx\Core\Repositories\Languages\LanguageRepositoryInterface;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class Languages extends SingleResourceApi implements LanguagesInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.Language.';
 
     /**
