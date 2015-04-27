@@ -3,6 +3,9 @@
 use \Neomerx\Core\Models\Language;
 use \Neomerx\CoreApi\Events\EventArgs;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class LanguageArgs extends EventArgs
 {
     /**

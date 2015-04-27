@@ -4,9 +4,14 @@ use \Neomerx\Core\Models\Language;
 use \Neomerx\CoreApi\Api\CrudInterface;
 use \Illuminate\Database\Eloquent\Collection;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 interface LanguagesInterface extends CrudInterface
 {
+    /** Parameter key */
     const PARAM_NAME     = Language::FIELD_NAME;
+    /** Parameter key */
     const PARAM_ISO_CODE = Language::FIELD_ISO_CODE;
 
     /**
