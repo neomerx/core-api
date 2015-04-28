@@ -14,10 +14,13 @@ use \Neomerx\Core\Repositories\Manufacturers\ManufacturerRepositoryInterface;
 use \Neomerx\Core\Repositories\Manufacturers\ManufacturerPropertiesRepositoryInterface;
 
 /**
+ * @package Neomerx\CoreApi
+ *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class Manufacturers extends ResourceWithPropertiesApi implements ManufacturersInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.Manufacturer.';
 
     /**

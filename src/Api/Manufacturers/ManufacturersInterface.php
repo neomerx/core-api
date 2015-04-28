@@ -5,12 +5,20 @@ use \Neomerx\Core\Models\Manufacturer;
 use \Illuminate\Database\Eloquent\Collection;
 use \Neomerx\Core\Models\ManufacturerProperties;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 interface ManufacturersInterface extends CrudInterface
 {
+    /** Parameter key */
     const PARAM_CODE                   = Manufacturer::FIELD_CODE;
+    /** Parameter key */
     const PARAM_ADDRESS                = Manufacturer::FIELD_ADDRESS;
+    /** Parameter key */
     const PARAM_PROPERTIES             = Manufacturer::FIELD_PROPERTIES;
+    /** Parameter key */
     const PARAM_PROPERTIES_NAME        = ManufacturerProperties::FIELD_NAME;
+    /** Parameter key */
     const PARAM_PROPERTIES_DESCRIPTION = ManufacturerProperties::FIELD_DESCRIPTION;
 
     /**
