@@ -3,6 +3,9 @@
 use \Neomerx\CoreApi\Events\EventArgs;
 use \Neomerx\Core\Models\Manufacturer;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class ManufacturerArgs extends EventArgs
 {
     /**
