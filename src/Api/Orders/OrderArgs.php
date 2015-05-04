@@ -3,6 +3,9 @@
 use \Neomerx\Core\Models\Order;
 use \Neomerx\CoreApi\Events\EventArgs;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class OrderArgs extends EventArgs
 {
     /**

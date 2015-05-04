@@ -7,8 +7,12 @@ use \Neomerx\Core\Support\SearchGrammar;
 use \Neomerx\CoreApi\Api\SingleResourceApi;
 use \Neomerx\Core\Repositories\Orders\OrderStatusRepositoryInterface;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class OrderStatuses extends SingleResourceApi implements OrderStatusesInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.OrderStatus.';
 
 //    /**

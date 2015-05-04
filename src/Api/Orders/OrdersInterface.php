@@ -6,6 +6,9 @@ use \Neomerx\CoreApi\Api\CrudInterface;
 use \Neomerx\Core\Models\OrderDetails;
 use \Illuminate\Database\Eloquent\Collection;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 interface OrdersInterface extends CrudInterface
 {
 //    const PARAM_ADDRESSES              = 'addresses';
@@ -38,21 +41,35 @@ interface OrdersInterface extends CrudInterface
 //
 //    const EVENT_PREFIX = 'Api.Order.';
 
+    /** Parameter key */
     const PARAM_ID_CUSTOMER                     = Customer::FIELD_ID;
+    /** Parameter key */
     const PARAM_ID_BILLING_ADDRESS              = 'billing_address_id';
+    /** Parameter key */
     const PARAM_ID_SHIPPING_ADDRESS             = 'shipping_address_id';
+    /** Parameter key */
     const PARAM_STORE_CODE                      = 'store_code';
+    /** Parameter key */
     const PARAM_STATUS_CODE                     = 'status_code';
+    /** Parameter key */
     const PARAM_CARRIER_CODE                    = 'carrier_code';
 
+    /** Parameter key */
     const PARAM_ORDER_DETAILS                   = Order::FIELD_DETAILS;
+    /** Parameter key */
     const PARAM_ORDER_DETAILS_ID                = OrderDetails::FIELD_ID;
+    /** Parameter key */
     const PARAM_ORDER_DETAILS_SKU               = 'sku';
+    /** Parameter key */
     const PARAM_ORDER_DETAILS_QUANTITY          = OrderDetails::FIELD_QUANTITY;
+    /** Parameter key */
     const PARAM_ORDER_DETAILS_PRICE_WO_TAX      = OrderDetails::FIELD_PRICE_WO_TAX;
+    /** Parameter key */
     const PARAM_ORDER_DETAILS_ID_SHIPPING_ORDER = OrderDetails::FIELD_ID_SHIPPING_ORDER;
 
+    /** Parameter key */
     const PARAM_BILLING_ADDRESS                 = Order::FIELD_BILLING_ADDRESS;
+    /** Parameter key */
     const PARAM_SHIPPING_ADDRESS                = Order::FIELD_SHIPPING_ADDRESS;
 
     /**

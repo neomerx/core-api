@@ -33,10 +33,13 @@ use \Neomerx\Core\Repositories\Orders\OrderDetailsRepositoryInterface;
 use \Neomerx\Core\Repositories\Orders\ShippingOrderRepositoryInterface;
 
 /**
+ * @package Neomerx\CoreApi
+ *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class Orders extends SingleResourceApi implements OrdersInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.Order.';
 
     /**
@@ -366,6 +369,8 @@ class Orders extends SingleResourceApi implements OrdersInterface
      * @param ShippingOrderRepositoryInterface $shippingOrderRepo
      * @param CarrierRepositoryInterface       $carrierRepo
      * @param InventoriesInterface             $inventories
+     *
+     * @SuppressWarnings(PHPMD.ExcessiveParameterList)
      */
     public function __construct(
         OrderRepositoryInterface $orderRepo,

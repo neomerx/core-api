@@ -4,9 +4,14 @@ use \Neomerx\CoreApi\Api\CrudInterface;
 use \Neomerx\Core\Models\OrderStatus;
 use \Illuminate\Database\Eloquent\Collection;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 interface OrderStatusesInterface extends CrudInterface
 {
+    /** Parameter key */
     const PARAM_CODE = OrderStatus::FIELD_CODE;
+    /** Parameter key */
     const PARAM_NAME = OrderStatus::FIELD_NAME;
 
     /**
