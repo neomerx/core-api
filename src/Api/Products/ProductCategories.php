@@ -11,10 +11,13 @@ use \Neomerx\Core\Repositories\Categories\CategoryRepositoryInterface;
 use \Neomerx\Core\Repositories\Products\ProductCategoryRepositoryInterface;
 
 /**
+ * @package Neomerx\CoreApi
+ *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class ProductCategories extends SingleResourceApi implements ProductCategoriesInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.ProductRelated.';
 
     /**

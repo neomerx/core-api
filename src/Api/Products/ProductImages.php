@@ -14,10 +14,13 @@ use \Neomerx\Core\Repositories\Products\VariantRepositoryInterface;
 use \Neomerx\Core\Repositories\Products\ProductImageRepositoryInterface;
 
 /**
+ * @package Neomerx\CoreApi
+ *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class ProductImages extends SingleResourceApi implements ProductImagesInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.ProductImage.';
 
     /**

@@ -6,6 +6,9 @@ use \Neomerx\CoreApi\Events\EventArgs;
 use \Neomerx\Core\Models\ProductCategory;
 use \Neomerx\Core\Exceptions\InvalidArgumentException;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class ProductCategoryArgs extends EventArgs
 {
     /**
