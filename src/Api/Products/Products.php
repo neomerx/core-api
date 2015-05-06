@@ -19,10 +19,13 @@ use \Neomerx\Core\Repositories\Manufacturers\ManufacturerRepositoryInterface;
 use \Neomerx\Core\Repositories\Products\ProductPropertiesRepositoryInterface;
 
 /**
+ * @package Neomerx\CoreApi
+ *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class Products extends ResourceWithPropertiesApi implements ProductsInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.Product.';
 //
 //    /**
