@@ -5,26 +5,48 @@ use \Neomerx\CoreApi\Api\CrudInterface;
 use \Neomerx\Core\Models\ProductProperties;
 use \Illuminate\Database\Eloquent\Collection;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 interface ProductsInterface extends CrudInterface
 {
+    /** Parameter key */
     const PARAM_SKU                          = Product::FIELD_SKU;
+    /** Parameter key */
     const PARAM_LINK                         = Product::FIELD_LINK;
+    /** Parameter key */
     const PARAM_ENABLED                      = Product::FIELD_ENABLED;
+    /** Parameter key */
     const PARAM_PRICE_WO_TAX                 = Product::FIELD_PRICE_WO_TAX;
+    /** Parameter key */
     const PARAM_PKG_HEIGHT                   = Product::FIELD_PKG_HEIGHT;
+    /** Parameter key */
     const PARAM_PKG_WIDTH                    = Product::FIELD_PKG_WIDTH;
+    /** Parameter key */
     const PARAM_PKG_LENGTH                   = Product::FIELD_PKG_LENGTH;
+    /** Parameter key */
     const PARAM_PKG_WEIGHT                   = Product::FIELD_PKG_WEIGHT;
+    /** Parameter key */
     const PARAM_TAX_TYPE_CODE                = 'tax_type_code';
+    /** Parameter key */
     const PARAM_MANUFACTURER_CODE            = 'manufacturer_code';
+    /** Parameter key */
     const PARAM_DEFAULT_CATEGORY_CODE        = 'default_category_code';
+    /** Parameter key */
     const PARAM_PROPERTIES                   = Product::FIELD_PROPERTIES;
+    /** Parameter key */
     const PARAM_PROPERTIES_NAME              = ProductProperties::FIELD_NAME;
+    /** Parameter key */
     const PARAM_PROPERTIES_DESCRIPTION       = ProductProperties::FIELD_DESCRIPTION;
+    /** Parameter key */
     const PARAM_PROPERTIES_DESCRIPTION_SHORT = ProductProperties::FIELD_DESCRIPTION_SHORT;
+    /** Parameter key */
     const PARAM_PROPERTIES_META_TITLE        = ProductProperties::FIELD_META_TITLE;
+    /** Parameter key */
     const PARAM_PROPERTIES_META_KEYWORDS     = ProductProperties::FIELD_META_KEYWORDS;
+    /** Parameter key */
     const PARAM_PROPERTIES_META_DESCRIPTION  = ProductProperties::FIELD_META_DESCRIPTION;
+    /** Parameter key */
     const PARAM_IMAGES                       = Product::FIELD_IMAGES;
 
     /**
