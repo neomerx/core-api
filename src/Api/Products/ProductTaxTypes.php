@@ -6,8 +6,12 @@ use \Neomerx\Core\Support\SearchGrammar;
 use \Neomerx\CoreApi\Api\SingleResourceApi;
 use \Neomerx\Core\Repositories\Products\ProductTaxTypeRepositoryInterface;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class ProductTaxTypes extends SingleResourceApi implements ProductTaxTypesInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.ProductTaxType.';
 
     /**
