@@ -4,9 +4,14 @@ use \Neomerx\CoreApi\Api\CrudInterface;
 use \Neomerx\Core\Models\ProductTaxType;
 use \Illuminate\Database\Eloquent\Collection;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 interface ProductTaxTypesInterface extends CrudInterface
 {
+    /** Parameter key */
     const PARAM_CODE = ProductTaxType::FIELD_CODE;
+    /** Parameter key */
     const PARAM_NAME = ProductTaxType::FIELD_NAME;
 
     /**
