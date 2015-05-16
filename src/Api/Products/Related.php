@@ -8,8 +8,12 @@ use \Neomerx\CoreApi\Api\SingleResourceApi;
 use \Neomerx\Core\Repositories\Products\ProductRepositoryInterface;
 use \Neomerx\Core\Repositories\Products\ProductRelatedRepositoryInterface;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class Related extends SingleResourceApi implements RelatedInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.ProductRelated.';
 
     /**
