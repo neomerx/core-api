@@ -3,6 +3,9 @@
 use \Neomerx\CoreApi\Events\EventArgs;
 use \Neomerx\Core\Models\Specification;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class SpecificationArgs extends EventArgs
 {
     /**
