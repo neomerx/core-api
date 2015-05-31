@@ -4,10 +4,16 @@ use \Neomerx\CoreApi\Api\CrudInterface;
 use \Neomerx\Core\Models\ProductRelated;
 use \Illuminate\Database\Eloquent\Collection;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 interface RelatedInterface extends CrudInterface
 {
+    /** Parameter key */
     const PARAM_ID          = ProductRelated::FIELD_ID;
+    /** Parameter key */
     const PARAM_PRODUCT_SKU = 'product_sku';
+    /** Parameter key */
     const PARAM_RELATED_SKU = 'related_sku';
 
     /**
