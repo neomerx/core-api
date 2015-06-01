@@ -14,9 +14,12 @@ use \Neomerx\Core\Repositories\Products\SpecificationRepositoryInterface;
 
 /**
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ *
+ * @package Neomerx\CoreApi
  */
 class Specifications extends SingleResourceApi implements SpecificationsInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.ProductRelated.';
 
     /**

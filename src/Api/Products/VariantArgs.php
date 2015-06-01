@@ -5,6 +5,9 @@ use \Neomerx\Core\Models\Variant;
 use \Neomerx\CoreApi\Events\EventArgs;
 use \Neomerx\Core\Exceptions\InvalidArgumentException;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class VariantArgs extends EventArgs
 {
     /**

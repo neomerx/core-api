@@ -16,9 +16,12 @@ use \Neomerx\Core\Repositories\Products\VariantPropertiesRepositoryInterface;
 
 /**
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ *
+ * @package Neomerx\CoreApi
  */
 class Variants extends ResourceWithPropertiesApi implements VariantsInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.Variant.';
 
     /**
