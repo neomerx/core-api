@@ -3,6 +3,9 @@
 use \Neomerx\CoreApi\Events\EventArgs;
 use \Neomerx\Core\Models\ShippingOrder;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class ShippingOrderArgs extends EventArgs
 {
     /**

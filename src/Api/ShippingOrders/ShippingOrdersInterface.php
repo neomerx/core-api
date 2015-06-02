@@ -7,10 +7,16 @@ use \Neomerx\Core\Models\ShippingOrder;
 use \Neomerx\CoreApi\Api\Carriers\ShippingData;
 use \Illuminate\Database\Eloquent\Collection;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 interface ShippingOrdersInterface extends CrudInterface
 {
+    /** Parameter key */
     const PARAM_CARRIER_CODE    = 'carrier_code';
+    /** Parameter key */
     const PARAM_STATUS_CODE     = 'status_code';
+    /** Parameter key */
     const PARAM_TRACKING_NUMBER = ShippingOrder::FIELD_TRACKING_NUMBER;
 
     /**

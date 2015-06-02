@@ -4,9 +4,14 @@ use \Neomerx\CoreApi\Api\CrudInterface;
 use \Neomerx\Core\Models\ShippingOrderStatus;
 use \Illuminate\Database\Eloquent\Collection;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 interface ShippingStatusesInterface extends CrudInterface
 {
+    /** Parameter key */
     const PARAM_CODE = ShippingOrderStatus::FIELD_CODE;
+    /** Parameter key */
     const PARAM_NAME = ShippingOrderStatus::FIELD_NAME;
 
     /**

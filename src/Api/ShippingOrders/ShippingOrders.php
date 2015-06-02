@@ -19,9 +19,12 @@ use \Neomerx\Core\Repositories\Customers\CustomerTypeRepositoryInterface;
 
 /**
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ *
+ * @package Neomerx\CoreApi
  */
 class ShippingOrders extends SingleResourceApi implements ShippingOrdersInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.ShippingOrder.';
 
     /**

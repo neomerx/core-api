@@ -6,8 +6,12 @@ use \Neomerx\CoreApi\Api\SingleResourceApi;
 use \Neomerx\Core\Models\ShippingOrderStatus;
 use \Neomerx\Core\Repositories\Orders\ShippingStatusRepositoryInterface;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 class ShippingStatuses extends SingleResourceApi implements ShippingStatusesInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.ShippingStatus.';
 
     /**
