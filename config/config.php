@@ -1,6 +1,7 @@
 <?php
 
 use \Neomerx\CoreApi\Support\Config as C;
+use \Neomerx\Limoncello\Config\Config as JAC;
 use \Neomerx\CoreApi\Api\Carriers\Calculators\FormulaCalculator;
 
 return [
@@ -31,6 +32,16 @@ return [
         C::PARAM_AUTH_CACHE_TOKENS_PREFIX     => 'employeeToken_',
         C::PARAM_AUTH_CACHE_TOKENS_IN_MINUTES => 5,
 
+    ],
+
+    C::JSON_API => [
+        JAC::SCHEMAS => [
+            \Neomerx\Core\Models\Language::class => \Neomerx\CoreApi\Schemas\LanguageSchema::class,
+        ],
+        JAC::JSON    => [
+            JAC::JSON_OPTIONS => JSON_PRETTY_PRINT,
+            JAC::JSON_DEPTH   => JAC::JSON_DEPTH_DEFAULT,
+        ]
     ],
 
 ];

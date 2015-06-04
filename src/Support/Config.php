@@ -19,6 +19,8 @@ class Config
     const PARAM_AUTH_CACHE_TOKENS_PREFIX     = 'auth_cache_tokens_prefix';
     const PARAM_AUTH_CACHE_TOKENS_IN_MINUTES = 'auth_cache_tokens_in_min';
 
+    const JSON_API = 'json_api';
+
     /**
      * @param string $key
      *
