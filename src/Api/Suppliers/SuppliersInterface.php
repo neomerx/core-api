@@ -5,12 +5,20 @@ use \Neomerx\CoreApi\Api\CrudInterface;
 use \Neomerx\Core\Models\SupplierProperties;
 use \Illuminate\Database\Eloquent\Collection;
 
+/**
+ * @package Neomerx\CoreApi
+ */
 interface SuppliersInterface extends CrudInterface
 {
+    /** Parameter key */
     const PARAM_CODE                   = Supplier::FIELD_CODE;
-    const PARAM_ADDRESS                = Supplier::FIELD_ADDRESS;
+    /** Parameter key */
+    const PARAM_ID_ADDRESS             = Supplier::FIELD_ID_ADDRESS;
+    /** Parameter key */
     const PARAM_PROPERTIES             = Supplier::FIELD_PROPERTIES;
+    /** Parameter key */
     const PARAM_PROPERTIES_NAME        = SupplierProperties::FIELD_NAME;
+    /** Parameter key */
     const PARAM_PROPERTIES_DESCRIPTION = SupplierProperties::FIELD_DESCRIPTION;
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-use \Neomerx\CoreApi\Server\Http\Controllers\ManufacturersControllerJson;
+use \Neomerx\CoreApi\Server\Http\Controllers\JsonApi\ManufacturersControllerJson;
 
 Route::resource(
     '/manufacturers',

@@ -69,7 +69,9 @@ class Manufacturers extends ResourceWithPropertiesApi implements ManufacturersIn
      */
     protected function getResourceRelations()
     {
-        return [Manufacturer::withProperties()];
+        return [
+            Manufacturer::withProperties(),
+        ];
     }
 
     /**
@@ -141,7 +143,7 @@ class Manufacturers extends ResourceWithPropertiesApi implements ManufacturersIn
      */
     protected function getInstance(array $input)
     {
-        $address = $this->addressApi->create(S\arrayGetValueEx($input, self::PARAM_ADDRESS));
+        $address = $this->addressApi->read(S\arrayGetValueEx($input, self::PARAM_ID_ADDRESS));
         return $this->manufacturerRepo->instance($address, $input);
     }
 
@@ -152,11 +154,10 @@ class Manufacturers extends ResourceWithPropertiesApi implements ManufacturersIn
     {
         /** @var Manufacturer $resource */
 
-        $addressInput = S\arrayGetValue($input, self::PARAM_ADDRESS);
-        if (empty($addressInput) === false) {
-            $this->addressApi->update($resource->{Manufacturer::FIELD_ID_ADDRESS}, $addressInput);
-        }
-        $this->manufacturerRepo->fill($resource, null, $input);
+        $addressId = S\arrayGetValue($input, self::PARAM_ID_ADDRESS);
+        $address   = $addressId !== null ? $this->addressApi->read($addressId) : null;
+
+        $this->manufacturerRepo->fill($resource, $address, $input);
         return $resource;
     }
 }

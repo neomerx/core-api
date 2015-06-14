@@ -12,11 +12,12 @@ use \Neomerx\CoreApi\Api\Territories\CountriesInterface;
  * @method static Country    read(string $code)
  * @method static void       update(string $code, array $input)
  * @method static void       delete(string $code)
- * @method static Collection all()
+ * @method static Collection search(array $parameters = [])
  * @method static Collection regions(string $code)
  */
 class Countries extends Facade
 {
+    /** Interface the facade is bind to */
     const INTERFACE_BIND_NAME = CountriesInterface::class;
 
     /**

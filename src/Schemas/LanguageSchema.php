@@ -11,11 +11,17 @@ class LanguageSchema extends SchemaProvider
     /** JSON API type */
     const TYPE = 'languages';
 
-    /** Resources URL */
-    const BASE_URL = '/languages';
+    /** Resources sub-URL */
+    const SUB_URL = '/languages/';
 
     /** Schema attribute */
     const ATTR_NAME = Language::FIELD_NAME;
+
+    /** Schema attribute */
+    const ATTR_CREATED_AT = Language::FIELD_CREATED_AT;
+
+    /** Schema attribute */
+    const ATTR_UPDATED_AT = Language::FIELD_UPDATED_AT;
 
     /** Schema attribute */
     const ATTR_ISO_CODE = Language::FIELD_ISO_CODE;
@@ -28,7 +34,7 @@ class LanguageSchema extends SchemaProvider
     /**
      * @var string
      */
-    protected $baseSelfUrl = self::BASE_URL;
+    protected $selfSubUrl = self::SUB_URL;
 
     /**
      * @inheritdoc
@@ -46,7 +52,9 @@ class LanguageSchema extends SchemaProvider
     {
         /** @var Language $language */
         return [
-            self::ATTR_NAME => $language->{Language::FIELD_NAME},
+            self::ATTR_NAME       => $language->{Language::FIELD_NAME},
+            self::ATTR_CREATED_AT => $language->{Language::FIELD_CREATED_AT},
+            self::ATTR_UPDATED_AT => $language->{Language::FIELD_UPDATED_AT},
         ];
     }
 }

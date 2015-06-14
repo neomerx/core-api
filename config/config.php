@@ -2,7 +2,22 @@
 
 use \Neomerx\CoreApi\Support\Config as C;
 use \Neomerx\Limoncello\Config\Config as JAC;
+use \Neomerx\CoreApi\Server\Http\Router as CoreApiRouter;
 use \Neomerx\CoreApi\Api\Carriers\Calculators\FormulaCalculator;
+
+use \Neomerx\Core\Models\Region;
+use \Neomerx\Core\Models\Address;
+use \Neomerx\Core\Models\Country;
+use \Neomerx\Core\Models\Language;
+use \Neomerx\Core\Models\Supplier;
+use \Neomerx\Core\Models\Manufacturer;
+
+use \Neomerx\CoreApi\Schemas\RegionSchema;
+use \Neomerx\CoreApi\Schemas\AddressSchema;
+use \Neomerx\CoreApi\Schemas\CountrySchema;
+use \Neomerx\CoreApi\Schemas\LanguageSchema;
+use \Neomerx\CoreApi\Schemas\SupplierSchema;
+use \Neomerx\CoreApi\Schemas\ManufacturerSchema;
 
 return [
 
@@ -36,12 +51,18 @@ return [
 
     C::JSON_API => [
         JAC::SCHEMAS => [
-            \Neomerx\Core\Models\Language::class => \Neomerx\CoreApi\Schemas\LanguageSchema::class,
+            Address::class                => AddressSchema::class,
+            Country::class                => CountrySchema::class,
+            Language::class               => LanguageSchema::class,
+            Manufacturer::class           => ManufacturerSchema::class,
+            Region::class                 => RegionSchema::class,
+            Supplier::class               => SupplierSchema::class,
         ],
         JAC::JSON    => [
-            JAC::JSON_OPTIONS => JSON_PRETTY_PRINT,
-            JAC::JSON_DEPTH   => JAC::JSON_DEPTH_DEFAULT,
-        ]
+            JAC::JSON_OPTIONS    => JSON_PRETTY_PRINT,
+            JAC::JSON_DEPTH      => JAC::JSON_DEPTH_DEFAULT,
+            JAC::JSON_URL_PREFIX => \Request::getUri() . CoreApiRouter::VERSION_PREFIX,
+        ],
     ],
 
 ];

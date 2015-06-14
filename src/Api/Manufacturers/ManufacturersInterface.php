@@ -13,7 +13,7 @@ interface ManufacturersInterface extends CrudInterface
     /** Parameter key */
     const PARAM_CODE                   = Manufacturer::FIELD_CODE;
     /** Parameter key */
-    const PARAM_ADDRESS                = Manufacturer::FIELD_ADDRESS;
+    const PARAM_ID_ADDRESS             = Manufacturer::FIELD_ID_ADDRESS;
     /** Parameter key */
     const PARAM_PROPERTIES             = Manufacturer::FIELD_PROPERTIES;
     /** Parameter key */

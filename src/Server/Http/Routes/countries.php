@@ -1,8 +1,6 @@
 <?php
 
-use \Neomerx\CoreApi\Server\Http\Controllers\CountriesControllerJson;
-
-Route::get('/countries/{code}/regions', ['uses' => CountriesControllerJson::class.'@regions']);
+use \Neomerx\CoreApi\Server\Http\Controllers\JsonApi\CountriesControllerJson;
 
 Route::resource(
     '/countries',

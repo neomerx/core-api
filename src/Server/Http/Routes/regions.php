@@ -1,6 +1,6 @@
 <?php
 
-use \Neomerx\CoreApi\Server\Http\Controllers\RegionsControllerJson;
+use \Neomerx\CoreApi\Server\Http\Controllers\JsonApi\RegionsControllerJson;
 
 Route::resource(
     '/regions',

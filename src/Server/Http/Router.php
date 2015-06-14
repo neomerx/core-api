@@ -9,12 +9,16 @@ use \Neomerx\CoreApi\Server\Http\Controllers\EmployeeLoginControllerJson;
  */
 class Router
 {
+    /** API version prefix */
+    const VERSION_PREFIX = 'api/v1';
+
     /**
      * @return callable
      */
     public static function getRoutes()
     {
         return function () {
+            include __DIR__ . '/Routes/addresses.php';
             include __DIR__ . '/Routes/auth.php';
             include __DIR__ . '/Routes/carriers.php';
             include __DIR__ . '/Routes/categories.php';

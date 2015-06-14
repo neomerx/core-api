@@ -1,12 +1,9 @@
 <?php namespace Neomerx\CoreApi\Server\Http\Controllers\JsonApi;
 
 use \Response;
-use \Illuminate\Support\Facades\App;
 use \Neomerx\CoreApi\Api\Facades\Languages;
 use \Neomerx\CoreApi\Schemas\LanguageSchema;
-use \Illuminate\Database\Eloquent\ModelNotFoundException;
-use \Neomerx\CoreApi\Converters\LanguageConverterGeneric;
-use \Symfony\Component\HttpFoundation\Response as SymfonyResponse;
+use \Neomerx\CoreApi\Api\Languages\LanguagesInterface;
 
 /**
  * @package Neomerx\CoreApi
@@ -18,22 +15,7 @@ final class LanguagesControllerJson extends BaseJsonApiController
      */
     public function __construct()
     {
-        /** @noinspection PhpUndefinedMethodInspection */
-        parent::__construct(Languages::INTERFACE_BIND_NAME, App::make(LanguageConverterGeneric::class));
-    }
-
-    /**
-     * Get all languages.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    final public function index()
-    {
-        $this->checkParametersEmpty();
-
-        $resources = $this->getApiFacade()->search()->all();
-
-        return $this->getContentResponse($resources);
+        parent::__construct(Languages::INTERFACE_BIND_NAME);
     }
 
     /**
@@ -45,7 +27,10 @@ final class LanguagesControllerJson extends BaseJsonApiController
     {
         $this->checkParametersEmpty();
 
-        $attributes = $this->getSingleDataAttributes(LanguageSchema::TYPE);
+        list(, $languageCode, $attributes) = $this->parseDocumentAsSingleData(LanguageSchema::TYPE);
+
+        // language code is an attribute on database level so add it
+        $attributes[LanguagesInterface::PARAM_ISO_CODE] = $languageCode;
 
         $resource = $this->getApiFacade()->create($attributes);
 
@@ -53,56 +38,20 @@ final class LanguagesControllerJson extends BaseJsonApiController
     }
 
     /**
-     * Get language by code.
-     *
-     * @param string $resourceCode
-     *
-     * @return Response
-     */
-    final public function show($resourceCode)
-    {
-        $this->checkParametersEmpty();
-
-        $resource = $this->getApiFacade()->read($resourceCode);
-
-        return $this->getContentResponse($resource);
-    }
-
-    /**
      * Update language.
      *
-     * @param string $resourceCode
+     * @param string $languageCode
      *
      * @return Response
      */
-    final public function update($resourceCode)
+    final public function update($languageCode)
     {
         $this->checkParametersEmpty();
 
-        $attributes = $this->getSingleDataAttributes(LanguageSchema::TYPE);
+        list(, , $attributes) = $this->parseDocumentAsSingleData(LanguageSchema::TYPE);
 
-        $this->getApiFacade()->update($resourceCode, $attributes);
+        $this->getApiFacade()->update($languageCode, $attributes);
 
-        return $this->getCodeResponse(SymfonyResponse::HTTP_OK);
-    }
-
-    /**
-     * Delete language.
-     *
-     * @param string $resourceCode
-     *
-     * @return Response
-     */
-    final public function destroy($resourceCode)
-    {
-        $this->checkParametersEmpty();
-
-        try {
-            $this->getApiFacade()->delete($resourceCode);
-        } catch (ModelNotFoundException $exception) {
-            // ignore if resource not found
-        }
-
-        return $this->getCodeResponse(SymfonyResponse::HTTP_NO_CONTENT);
+        return $this->getContentResponse($this->getApiFacade()->read($languageCode));
     }
 }
