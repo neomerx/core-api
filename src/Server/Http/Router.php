@@ -27,6 +27,7 @@ class Router
             include __DIR__ . '/Routes/customers.php';
             include __DIR__ . '/Routes/employees.php';
             include __DIR__ . '/Routes/features.php';
+            include __DIR__ . '/Routes/images.php';
             include __DIR__ . '/Routes/image-formats.php';
             include __DIR__ . '/Routes/inventory.php';
             include __DIR__ . '/Routes/languages.php';

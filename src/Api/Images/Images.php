@@ -63,7 +63,10 @@ class Images extends ResourceWithPropertiesApi implements ImagesInterface
      */
     protected function getResourceRelations()
     {
-        return [Image::withProperties()];
+        return [
+            Image::withPaths(),
+            Image::withProperties(),
+        ];
     }
 
     /**
@@ -136,9 +139,14 @@ class Images extends ResourceWithPropertiesApi implements ImagesInterface
         /** @var UploadedFile $file */
         $file = S\arrayGetValueEx($input, self::PARAM_ORIGINAL_FILE_DATA);
         unset($input[self::PARAM_ORIGINAL_FILE_DATA]);
-        $fileName = $input[self::PARAM_ORIGINAL_FILE_NAME];
+        $fileName = S\arrayGetValue($input, self::PARAM_ORIGINAL_FILE_NAME);
+        $fileName = $fileName !== null ? pathinfo($fileName, PATHINFO_BASENAME) : $file->getClientOriginalName();
 
-        $this->copyToImagesDisk($file, $fileName);
+        $input[self::PARAM_ORIGINAL_FILE_NAME] = $fileName;
+
+        // TODO make drive name and folder configurable and update config accordingly
+        $drive = Config::get(Config::KEY_IMAGE_DISK);
+        $this->copyToDisk($file, $drive, Config::KEY_IMAGE_FOLDER_ORIGINALS.DIRECTORY_SEPARATOR.$fileName);
 
         return $this->imagesRepo->instance($input);
     }
@@ -156,16 +164,16 @@ class Images extends ResourceWithPropertiesApi implements ImagesInterface
 
     /**
      * @param UploadedFile $file
-     * @param string       $fileName
+     * @param string       $diskName
+     * @param string       $folderAndFileName
      */
-    protected function copyToImagesDisk(UploadedFile $file, $fileName)
+    protected function copyToDisk(UploadedFile $file, $diskName, $folderAndFileName)
     {
         if ($file->isValid()) {
-            // TODO make drive name configurable and update config accordingly
-            $imageDrive = Storage::disk(Config::get(Config::KEY_IMAGE_DISK));
+            $imageDrive = Storage::disk($diskName);
             $stream     = fopen($file->getRealPath(), 'r');
             try {
-                $imageDrive->writeStream(Config::KEY_IMAGE_FOLDER_ORIGINALS.DIRECTORY_SEPARATOR.$fileName, $stream);
+                $imageDrive->writeStream($folderAndFileName, $stream);
             } finally {
                 fclose($stream);
             }

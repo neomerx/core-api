@@ -1,6 +1,6 @@
 <?php
 
-use \Neomerx\CoreApi\Server\Http\Controllers\ImageFormatsControllerJson;
+use \Neomerx\CoreApi\Server\Http\Controllers\JsonApi\ImageFormatsControllerJson;
 
 Route::resource(
     '/image-formats',

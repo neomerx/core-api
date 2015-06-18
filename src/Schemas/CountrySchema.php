@@ -49,10 +49,10 @@ class CountrySchema extends SchemaProvider
      */
     public function getAttributes($country)
     {
-        $attributes = [];
+        $properties = [];
         foreach ($country->{Country::FIELD_PROPERTIES} as $property) {
             $isoCode = $property->{CountryProperties::FIELD_LANGUAGE}->{Language::FIELD_ISO_CODE};
-            $attributes[$isoCode] = [
+            $properties[$isoCode] = [
                 CountryProperties::FIELD_NAME        => $property->{CountryProperties::FIELD_NAME},
                 CountryProperties::FIELD_DESCRIPTION => $property->{CountryProperties::FIELD_DESCRIPTION},
             ];
@@ -60,7 +60,7 @@ class CountrySchema extends SchemaProvider
 
         /** @var Country $country */
         return [
-            self::ATTR_PROPERTIES => $attributes,
+            self::ATTR_PROPERTIES => $properties,
             self::ATTR_CREATED_AT => $country->{Country::FIELD_CREATED_AT},
             self::ATTR_UPDATED_AT => $country->{Country::FIELD_UPDATED_AT},
         ];
