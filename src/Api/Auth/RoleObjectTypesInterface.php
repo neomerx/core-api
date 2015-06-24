@@ -1,6 +1,5 @@
 <?php namespace Neomerx\CoreApi\Api\Auth;
 
-use \Neomerx\Core\Models\Role;
 use \Neomerx\Core\Models\RoleObjectType;
 use \Neomerx\CoreApi\Api\CrudInterface;
 use \Illuminate\Database\Eloquent\Collection;
@@ -40,36 +39,6 @@ interface RoleObjectTypesInterface extends CrudInterface
      * @return RoleObjectType
      */
     public function read($idx);
-
-    /**
-     * Create role object type link.
-     *
-     * @param Role  $role
-     * @param array $input
-     *
-     * @return RoleObjectType
-     */
-    public function createWithRole(Role $role, array $input);
-
-    /**
-     * Read role object type link by identifier.
-     *
-     * @param string $roleCode
-     * @param int    $roleObjectTypeId
-     *
-     * @return RoleObjectType
-     */
-    public function readWithRole($roleCode, $roleObjectTypeId);
-
-    /**
-     * Delete role object type link by identifier.
-     *
-     * @param string $roleCode
-     * @param int    $roleObjectTypeId
-     *
-     * @return void
-     */
-    public function deleteWithRole($roleCode, $roleObjectTypeId);
 
     /**
      * Search role object type links.

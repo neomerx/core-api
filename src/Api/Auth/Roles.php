@@ -46,7 +46,9 @@ class Roles extends SingleResourceApi implements RolesInterface
      */
     protected function getResourceRelations()
     {
-        return [];
+        return [
+            Role::withObjectTypes(),
+        ];
     }
 
     /**

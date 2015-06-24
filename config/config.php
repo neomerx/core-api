@@ -5,21 +5,29 @@ use \Neomerx\Limoncello\Config\Config as JAC;
 use \Neomerx\CoreApi\Server\Http\Router as CoreApiRouter;
 use \Neomerx\CoreApi\Api\Carriers\Calculators\FormulaCalculator;
 
+use \Neomerx\Core\Models\Role;
 use \Neomerx\Core\Models\Image;
 use \Neomerx\Core\Models\Region;
 use \Neomerx\Core\Models\Address;
 use \Neomerx\Core\Models\Country;
+use \Neomerx\Core\Models\Employee;
 use \Neomerx\Core\Models\Language;
 use \Neomerx\Core\Models\Supplier;
+use \Neomerx\Core\Models\ObjectType;
 use \Neomerx\Core\Models\ImageFormat;
 use \Neomerx\Core\Models\Manufacturer;
+use \Neomerx\Core\Models\RoleObjectType;
 
+use \Neomerx\CoreApi\Schemas\RoleSchema;
 use \Neomerx\CoreApi\Schemas\ImageSchema;
 use \Neomerx\CoreApi\Schemas\RegionSchema;
 use \Neomerx\CoreApi\Schemas\AddressSchema;
 use \Neomerx\CoreApi\Schemas\CountrySchema;
+use \Neomerx\CoreApi\Schemas\EmployeeSchema;
 use \Neomerx\CoreApi\Schemas\LanguageSchema;
 use \Neomerx\CoreApi\Schemas\SupplierSchema;
+use \Neomerx\CoreApi\Schemas\ObjectTypeSchema;
+use \Neomerx\CoreApi\Schemas\RoleObjectSchema;
 use \Neomerx\CoreApi\Schemas\ImageFormatSchema;
 use \Neomerx\CoreApi\Schemas\ManufacturerSchema;
 
@@ -57,11 +65,15 @@ return [
         JAC::SCHEMAS => [
             Address::class                => AddressSchema::class,
             Country::class                => CountrySchema::class,
+            Employee::class               => EmployeeSchema::class,
             Image::class                  => ImageSchema::class,
             ImageFormat::class            => ImageFormatSchema::class,
             Language::class               => LanguageSchema::class,
             Manufacturer::class           => ManufacturerSchema::class,
+            ObjectType::class             => ObjectTypeSchema::class,
             Region::class                 => RegionSchema::class,
+            Role::class                   => RoleSchema::class,
+            RoleObjectType::class         => RoleObjectSchema::class,
             Supplier::class               => SupplierSchema::class,
         ],
         JAC::JSON    => [

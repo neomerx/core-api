@@ -136,7 +136,7 @@ class BaseJsonApiController extends BaseController
         if (empty($relToParse) === false && empty($schemaRelationships) === false) {
             foreach ($schemaRelationships as $name => $type) {
                 $relationship = S\arrayGetValue($relToParse, $name);
-                if ($relationship !== null) {
+                if (is_array($relationship) === true) {
                     $relData = S\arrayGetValueEx($relationship, DocumentInterface::KEYWORD_DATA);
                     $relationships[$name] = $this->parseResourceObjects($relData, $type, $name);
                 }

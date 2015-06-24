@@ -55,10 +55,10 @@ class ManufacturerSchema extends SchemaProvider
      */
     public function getAttributes($manufacturer)
     {
-        $attributes = [];
+        $properties = [];
         foreach ($manufacturer->{Manufacturer::FIELD_PROPERTIES} as $property) {
             $isoCode = $property->{ManufacturerProperties::FIELD_LANGUAGE}->{Language::FIELD_ISO_CODE};
-            $attributes[$isoCode] = [
+            $properties[$isoCode] = [
                 ManufacturerProperties::FIELD_NAME        => $property->{ManufacturerProperties::FIELD_NAME},
                 ManufacturerProperties::FIELD_DESCRIPTION => $property->{ManufacturerProperties::FIELD_DESCRIPTION},
             ];
@@ -66,7 +66,7 @@ class ManufacturerSchema extends SchemaProvider
 
         /** @var Manufacturer $manufacturer */
         return [
-            self::ATTR_PROPERTIES => $attributes,
+            self::ATTR_PROPERTIES => $properties,
             self::ATTR_CREATED_AT => $manufacturer->{Manufacturer::FIELD_CREATED_AT},
             self::ATTR_UPDATED_AT => $manufacturer->{Manufacturer::FIELD_UPDATED_AT},
         ];

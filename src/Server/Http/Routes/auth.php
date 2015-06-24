@@ -1,8 +1,8 @@
 <?php
 
-use \Neomerx\CoreApi\Server\Http\Controllers\RolesControllerJson;
-use \Neomerx\CoreApi\Server\Http\Controllers\ObjectTypesControllerJson;
-use \Neomerx\CoreApi\Server\Http\Controllers\RoleObjectTypesControllerJson;
+use \Neomerx\CoreApi\Server\Http\Controllers\JsonApi\RolesControllerJson;
+use \Neomerx\CoreApi\Server\Http\Controllers\JsonApi\ObjectTypesControllerJson;
+use \Neomerx\CoreApi\Server\Http\Controllers\JsonApi\RoleObjectsControllerJson;
 
 Route::resource(
     '/object-types',
@@ -17,7 +17,7 @@ Route::resource(
 );
 
 Route::resource(
-    '/roles/{roleCode}/object-types',
-    RoleObjectTypesControllerJson::class,
-    ['only' => ['index', 'show', 'store', 'destroy']]
+    '/role-objects',
+    RoleObjectsControllerJson::class,
+    ['only' => ['index', 'show', 'store', 'update', 'destroy']]
 );

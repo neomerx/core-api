@@ -5,7 +5,7 @@ use \Neomerx\Core\Models\BaseModel;
 use \Neomerx\Core\Models\ObjectType;
 use \Neomerx\Core\Models\RoleObjectType;
 use \Neomerx\Core\Support\SearchGrammar;
-use \Neomerx\CoreApi\Api\DependentSingleResourceApi;
+use \Neomerx\CoreApi\Api\SingleResourceApi;
 use \Neomerx\Core\Repositories\Auth\RoleRepositoryInterface;
 use \Neomerx\Core\Repositories\Auth\ObjectTypeRepositoryInterface;
 use \Neomerx\Core\Repositories\Auth\RoleObjectTypeRepositoryInterface;
@@ -13,7 +13,7 @@ use \Neomerx\Core\Repositories\Auth\RoleObjectTypeRepositoryInterface;
 /**
  * @package Neomerx\CoreApi
  */
-class RoleObjectTypes extends DependentSingleResourceApi implements RoleObjectTypesInterface
+class RoleObjectTypes extends SingleResourceApi implements RoleObjectTypesInterface
 {
     /** Event prefix */
     const EVENT_PREFIX = 'Api.RoleObjectType.';
@@ -43,8 +43,6 @@ class RoleObjectTypes extends DependentSingleResourceApi implements RoleObjectTy
         RoleRepositoryInterface $roleRepo,
         ObjectTypeRepositoryInterface $objectTypeRepo
     ) {
-        parent::__construct($roleRepo, self::PARAM_ID_ROLE, self::PARAM_ID);
-
         $this->roleRepo           = $roleRepo;
         $this->objectTypeRepo     = $objectTypeRepo;
         $this->roleObjectTypeRepo = $roleObjectTypeRepo;
@@ -55,8 +53,11 @@ class RoleObjectTypes extends DependentSingleResourceApi implements RoleObjectTy
      */
     protected function getInstance(array $input)
     {
-        $parentResource = $this->keyToModelEx($input, self::PARAM_ROLE_CODE, $this->roleRepo);
-        return $this->instanceWithParent($parentResource, $input);
+        /** @var Role $role */
+        $role = $this->keyToModelEx($input, self::PARAM_ROLE_CODE, $this->roleRepo);
+        /** @var ObjectType $objectType */
+        $objectType = $this->keyToModelEx($input, self::PARAM_ID_TYPE, $this->objectTypeRepo);
+        return $this->roleObjectTypeRepo->instance($role, $objectType, $input);
     }
 
     /**
@@ -104,22 +105,6 @@ class RoleObjectTypes extends DependentSingleResourceApi implements RoleObjectTy
     /**
      * @inheritdoc
      */
-    protected function instanceWithParent(BaseModel $parentResource, array $input)
-    {
-        assert('$parentResource instanceof '.Role::class);
-
-        /** @var Role $parentResource */
-
-        /** @var ObjectType $objectType */
-        $objectType = $this->keyToModelEx($input, self::PARAM_ID_TYPE, $this->objectTypeRepo);
-
-        $resource = $this->roleObjectTypeRepo->instance($parentResource, $objectType, $input);
-        return $resource;
-    }
-
-    /**
-     * @inheritdoc
-     */
     protected function fillResource(BaseModel $resource, array $input)
     {
         /** @var RoleObjectType $resource */
@@ -130,35 +115,7 @@ class RoleObjectTypes extends DependentSingleResourceApi implements RoleObjectTy
         /** @var ObjectType $objectType */
         $objectType = $this->keyToModel($input, self::PARAM_ID_TYPE, $this->objectTypeRepo);
 
-        $this->roleObjectTypeRepo->fill($resource, $role, $objectType);
+        $this->roleObjectTypeRepo->fill($resource, $role, $objectType, $input);
         return $resource;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function createWithRole(Role $role, array $input)
-    {
-        return $this->createWith($role, $input);
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function readWithRole($roleCode, $roleObjectTypeId)
-    {
-        /** @var Role $role */
-        $role = $this->readResourceFromRepository($roleCode, $this->roleRepo, [], [Role::FIELD_ID]);
-        return $this->readWith($role->{Role::FIELD_ID}, $roleObjectTypeId);
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function deleteWithRole($roleCode, $roleObjectTypeId)
-    {
-        /** @var Role $role */
-        $role = $this->readResourceFromRepository($roleCode, $this->roleRepo, [], [Role::FIELD_ID]);
-        $this->deleteWith($role->{Role::FIELD_ID}, $roleObjectTypeId);
     }
 }

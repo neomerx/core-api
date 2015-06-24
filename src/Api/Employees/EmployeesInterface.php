@@ -20,6 +20,8 @@ interface EmployeesInterface extends CrudInterface
     /** Parameter key */
     const PARAM_ACTIVE                = Employee::FIELD_ACTIVE;
     /** Parameter key */
+    const PARAM_ROLES                 = Employee::FIELD_ROLES;
+    /** Parameter key */
     const PARAM_PASSWORD              = Employee::FIELD_PASSWORD;
     /** Parameter key */
     const PARAM_PASSWORD_CONFIRMATION = Employee::PARAM_PASSWORD_CONFIRMATION;

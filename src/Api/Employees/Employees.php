@@ -1,10 +1,15 @@
 <?php namespace Neomerx\CoreApi\Api\Employees;
 
+use \Neomerx\Core\Models\Role;
+use \Neomerx\Core\Support as S;
 use \Neomerx\Core\Models\Employee;
 use \Neomerx\Core\Models\BaseModel;
+use \Neomerx\Core\Models\EmployeeRole;
 use \Neomerx\Core\Support\SearchGrammar;
 use \Neomerx\CoreApi\Api\SingleResourceApi;
+use \Neomerx\Core\Repositories\Auth\RoleRepositoryInterface;
 use \Neomerx\Core\Repositories\Employees\EmployeeRepositoryInterface;
+use \Neomerx\Core\Repositories\Employees\EmployeeRoleRepositoryInterface;
 
 /**
  * @package Neomerx\CoreApi
@@ -20,13 +25,30 @@ class Employees extends SingleResourceApi implements EmployeesInterface
     private $employeeRepo;
 
     /**
+     * @var RoleRepositoryInterface
+     */
+    private $roleRepo;
+
+    /**
+     * @var EmployeeRoleRepositoryInterface
+     */
+    private $employeeRoleRepo;
+
+    /**
      * Constructor.
      *
-     * @param EmployeeRepositoryInterface $employeeRepo
+     * @param EmployeeRepositoryInterface     $employeeRepo
+     * @param EmployeeRoleRepositoryInterface $employeeRoleRepo
+     * @param RoleRepositoryInterface         $roleRepo
      */
-    public function __construct(EmployeeRepositoryInterface $employeeRepo)
-    {
-        $this->employeeRepo = $employeeRepo;
+    public function __construct(
+        EmployeeRepositoryInterface $employeeRepo,
+        EmployeeRoleRepositoryInterface $employeeRoleRepo,
+        RoleRepositoryInterface $roleRepo
+    ) {
+        $this->roleRepo         = $roleRepo;
+        $this->employeeRepo     = $employeeRepo;
+        $this->employeeRoleRepo = $employeeRoleRepo;
     }
 
     /**
@@ -50,7 +72,9 @@ class Employees extends SingleResourceApi implements EmployeesInterface
      */
     protected function getResourceRelations()
     {
-        return [];
+        return [
+            Employee::withRoles(),
+        ];
     }
 
     /**
@@ -72,6 +96,23 @@ class Employees extends SingleResourceApi implements EmployeesInterface
 
     /**
      * @inheritdoc
+     */
+    protected function onCreating(BaseModel $resource, array $input)
+    {
+        /** @var Employee $resource */
+
+        parent::onCreating($resource, $input);
+
+        $roleCodes  = S\arrayGetValue($input, self::PARAM_ROLES, []);
+        foreach ($roleCodes as $roleCode) {
+            /** @var Role $role */
+            $role   = $this->readResourceFromRepository($roleCode, $this->roleRepo, [], [Role::FIELD_ID]);
+            $this->employeeRoleRepo->instance($resource, $role)->saveOrFail();
+        }
+    }
+
+    /**
+     * @inheritdoc
      * @return Employee
      */
     protected function fillResource(BaseModel $resource, array $input)
@@ -80,6 +121,36 @@ class Employees extends SingleResourceApi implements EmployeesInterface
         $this->employeeRepo->fill($resource, $input);
 
         return $resource;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    protected function onUpdating(BaseModel $resource, array $input)
+    {
+        /** @var Employee $resource */
+
+        parent::onUpdating($resource, $input);
+
+        $roleCodes  = S\arrayGetValue($input, self::PARAM_ROLES, null);
+        if ($roleCodes !== null && is_array($roleCodes) === true) {
+            $employeeRoles = $this->employeeRoleRepo->search([], [
+                EmployeeRole::FIELD_ID_EMPLOYEE => $resource->{Employee::FIELD_ID},
+            ], null, [EmployeeRole::FIELD_ID]);
+
+            // delete existing roles
+            foreach ($employeeRoles as $employeeRole) {
+                /** @var EmployeeRole $employeeRole */
+                $employeeRole->deleteOrFail();
+            }
+
+            // add new roles
+            foreach ($roleCodes as $roleCode) {
+                /** @var Role $role */
+                $role   = $this->readResourceFromRepository($roleCode, $this->roleRepo, [], [Role::FIELD_ID]);
+                $this->employeeRoleRepo->instance($resource, $role)->saveOrFail();
+            }
+        }
     }
 
     /**
