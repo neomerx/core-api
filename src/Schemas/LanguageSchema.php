@@ -23,9 +23,6 @@ class LanguageSchema extends SchemaProvider
     /** Schema attribute */
     const ATTR_UPDATED_AT = Language::FIELD_UPDATED_AT;
 
-    /** Schema attribute */
-    const ATTR_ISO_CODE = Language::FIELD_ISO_CODE;
-
     /**
      * @var string
      */
