@@ -15,11 +15,13 @@ use \Neomerx\CoreApi\Api\Carriers\CarriersInterface;
  * @method static void       update(string $code, array $input)
  * @method static void       delete(string $code)
  * @method static Collection search(array $parameters = [])
+ * @method static Collection getAvailableCalculators()
  * @method static array      calculateTariffs(ShippingData $shippingData)
  * @method static Tariff     calculateTariff(ShippingData $shippingData, Carrier $carrier)
  */
 class Carriers extends Facade
 {
+    /** Interface the facade is bind to */
     const INTERFACE_BIND_NAME = CarriersInterface::class;
 
     /**

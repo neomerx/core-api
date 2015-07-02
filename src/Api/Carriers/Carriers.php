@@ -2,14 +2,15 @@
 
 use \Neomerx\Core\Support as S;
 use \Neomerx\Core\Models\Carrier;
-use \Neomerx\CoreApi\Support\Config;
 use \Neomerx\Core\Models\Language;
 use \Neomerx\Core\Models\BaseModel;
+use \Neomerx\CoreApi\Support\Config;
 use \Neomerx\Core\Support\SearchGrammar;
 use \Neomerx\Core\Models\CarrierProperties;
 use \Illuminate\Database\Eloquent\Collection;
 use \Neomerx\CoreApi\Api\ResourceWithPropertiesApi;
 use \Neomerx\Core\Repositories\RepositoryInterface;
+use \Neomerx\CoreApi\Api\Carriers\Calculators\Calculator;
 use \Neomerx\Core\Repositories\Carriers\CarrierRepositoryInterface;
 use \Neomerx\Core\Repositories\Languages\LanguageRepositoryInterface;
 use \Neomerx\Core\Repositories\Carriers\CarrierPropertiesRepositoryInterface;
@@ -19,6 +20,7 @@ use \Neomerx\Core\Repositories\Carriers\CarrierPropertiesRepositoryInterface;
  */
 class Carriers extends ResourceWithPropertiesApi implements CarriersInterface
 {
+    /** Event prefix */
     const EVENT_PREFIX = 'Api.Carrier.';
 
     /**
@@ -151,11 +153,7 @@ class Carriers extends ResourceWithPropertiesApi implements CarriersInterface
     }
 
     /**
-     * Select all carriers matching address, dimension and price limitations in $shippingData and calculate tariffs.
-     *
-     * @param ShippingData $shippingData
-     *
-     * @return array [..., [Carrier, Tariff], ...]
+     * @inheritdoc
      */
     public function calculateTariffs(ShippingData $shippingData)
     {
@@ -170,12 +168,7 @@ class Carriers extends ResourceWithPropertiesApi implements CarriersInterface
     }
 
     /**
-     * Calculate tariff for specified carrier.
-     *
-     * @param ShippingData $shippingData
-     * @param Carrier      $carrier
-     *
-     * @return Tariff
+     * @inheritdoc
      */
     public function calculateTariff(ShippingData $shippingData, Carrier $carrier)
     {
@@ -188,6 +181,27 @@ class Carriers extends ResourceWithPropertiesApi implements CarriersInterface
 
         $calculator->init($carrier);
         return $calculator->calculate(TariffCalculatorData::newFromShippingData($carrier->data, $shippingData));
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getAvailableCalculators()
+    {
+        $result = [];
+        foreach (Config::get(Config::KEY_CARRIERS.'.'.Config::KEY_CARRIERS_TARIFF_CALCULATORS) as $code => $setup) {
+            $result[] = $this->readCalculator($code, $setup);
+        }
+        return $result;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getCalculator($code)
+    {
+        $data = Config::get(Config::KEY_CARRIERS.'.'.Config::KEY_CARRIERS_TARIFF_CALCULATORS.'.'.$code);
+        return $data === null ? null : $this->readCalculator($code, $data);
     }
 
     /**
@@ -211,23 +225,17 @@ class Carriers extends ResourceWithPropertiesApi implements CarriersInterface
     }
 
     /**
-     * Get available carrier calculators.
+     * @param string $code
+     * @param array $data
      *
-     * @return array
+     * @return Calculator
      */
-    public function getAvailableCalculators()
+    protected function readCalculator($code, array $data)
     {
-        $result = [];
-        foreach (Config::get(Config::KEY_CARRIERS.'.'.Config::KEY_CARRIERS_TARIFF_CALCULATORS) as $code => $setup) {
-            assert('isset($setup[\''.Config::PARAM_CALCULATOR_NAME.'\'])');
-            assert('isset($setup[\''.Config::PARAM_CALCULATOR_DESCRIPTION.'\'])');
+        $class = $data[Config::PARAM_CALCULATOR_FACTORY];
+        $name  = trans($data[Config::PARAM_CALCULATOR_NAME]);
+        $desc  = trans($data[Config::PARAM_CALCULATOR_DESCRIPTION]);
 
-            $result[] = [
-                Config::PARAM_CALCULATOR_CODE        => $code,
-                Config::PARAM_CALCULATOR_NAME        => trans($setup[Config::PARAM_CALCULATOR_NAME]),
-                Config::PARAM_CALCULATOR_DESCRIPTION => trans($setup[Config::PARAM_CALCULATOR_DESCRIPTION]),
-            ];
-        }
-        return $result;
+        return new Calculator($code, $class, $name, $desc);
     }
 }

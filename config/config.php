@@ -9,6 +9,7 @@ use \Neomerx\Core\Models\Role;
 use \Neomerx\Core\Models\Image;
 use \Neomerx\Core\Models\Region;
 use \Neomerx\Core\Models\Address;
+use \Neomerx\Core\Models\Carrier;
 use \Neomerx\Core\Models\Country;
 use \Neomerx\Core\Models\Employee;
 use \Neomerx\Core\Models\Language;
@@ -17,15 +18,18 @@ use \Neomerx\Core\Models\ObjectType;
 use \Neomerx\Core\Models\ImageFormat;
 use \Neomerx\Core\Models\Manufacturer;
 use \Neomerx\Core\Models\RoleObjectType;
+use \Neomerx\CoreApi\Api\Carriers\Calculators\Calculator;
 
 use \Neomerx\CoreApi\Schemas\RoleSchema;
 use \Neomerx\CoreApi\Schemas\ImageSchema;
 use \Neomerx\CoreApi\Schemas\RegionSchema;
 use \Neomerx\CoreApi\Schemas\AddressSchema;
+use \Neomerx\CoreApi\Schemas\CarrierSchema;
 use \Neomerx\CoreApi\Schemas\CountrySchema;
 use \Neomerx\CoreApi\Schemas\EmployeeSchema;
 use \Neomerx\CoreApi\Schemas\LanguageSchema;
 use \Neomerx\CoreApi\Schemas\SupplierSchema;
+use \Neomerx\CoreApi\Schemas\CalculatorSchema;
 use \Neomerx\CoreApi\Schemas\ObjectTypeSchema;
 use \Neomerx\CoreApi\Schemas\RoleObjectSchema;
 use \Neomerx\CoreApi\Schemas\ImageFormatSchema;
@@ -64,6 +68,8 @@ return [
     C::JSON_API => [
         JAC::SCHEMAS => [
             Address::class                => AddressSchema::class,
+            Calculator::class             => CalculatorSchema::class,
+            Carrier::class                => CarrierSchema::class,
             Country::class                => CountrySchema::class,
             Employee::class               => EmployeeSchema::class,
             Image::class                  => ImageSchema::class,
