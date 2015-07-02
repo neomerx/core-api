@@ -61,7 +61,7 @@ final class SuppliersControllerJson extends BaseJsonApiController
             ]);
 
         $addressId  = S\arrayGetValue($relationships, SupplierSchema::REL_ADDRESS);
-        $properties = S\arrayGetValueEx($attributes, SupplierSchema::ATTR_PROPERTIES);
+        $properties = S\arrayGetValue($attributes, SupplierSchema::ATTR_PROPERTIES);
 
         $input = S\arrayFilterNulls([
             SuppliersInterface::PARAM_ID_ADDRESS => $addressId,

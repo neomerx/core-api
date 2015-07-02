@@ -61,7 +61,7 @@ final class ManufacturersControllerJson extends BaseJsonApiController
             ]);
 
         $addressId  = S\arrayGetValue($relationships, ManufacturerSchema::REL_ADDRESS);
-        $properties = S\arrayGetValueEx($attributes, ManufacturerSchema::ATTR_PROPERTIES);
+        $properties = S\arrayGetValue($attributes, ManufacturerSchema::ATTR_PROPERTIES);
 
         $input = S\arrayFilterNulls([
             ManufacturersInterface::PARAM_ID_ADDRESS => $addressId,
