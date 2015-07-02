@@ -3,7 +3,7 @@
 use \Neomerx\CoreApi\Api\CrudInterface;
 use \Neomerx\Core\Models\CharacteristicValue;
 use \Illuminate\Database\Eloquent\Collection;
-use Neomerx\Core\Models\CharacteristicValueProperties;
+use \Neomerx\Core\Models\CharacteristicValueProperties;
 
 /**
  * @package Neomerx\CoreApi

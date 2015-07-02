@@ -3,7 +3,7 @@
 use \Neomerx\CoreApi\Api\CrudInterface;
 use \Neomerx\Core\Models\Measurement;
 use \Illuminate\Database\Eloquent\Collection;
-use Neomerx\Core\Models\MeasurementProperties;
+use \Neomerx\Core\Models\MeasurementProperties;
 
 /**
  * @package Neomerx\CoreApi
