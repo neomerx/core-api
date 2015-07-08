@@ -138,7 +138,7 @@ class BaseJsonApiController extends BaseController
                 $relationship = S\arrayGetValue($relToParse, $name);
                 if (is_array($relationship) === true) {
                     $relData = S\arrayGetValueEx($relationship, DocumentInterface::KEYWORD_DATA);
-                    $relationships[$name] = $this->parseResourceObjects($relData, $type, $name);
+                    $relationships[$name] = $this->parseResourceObjects($relData, $type);
                 }
             }
         }
@@ -169,12 +169,11 @@ class BaseJsonApiController extends BaseController
 
     /**
      * @param array  $relationshipData
-     * @param string $name
      * @param string $type
      *
      * @return mixed
      */
-    private function parseResourceObjects($relationshipData, $type, $name)
+    private function parseResourceObjects($relationshipData, $type)
     {
         // Possible formats for $relData
         // 1) single item    ['type' => '...', 'id' => '...']
@@ -185,16 +184,16 @@ class BaseJsonApiController extends BaseController
         $resourceRelShips = null;
         if (isset($relationshipData[DocumentInterface::KEYWORD_TYPE]) === true) {
             // if it has 'type' it's a single item
-            $resourceRelShips[$name] = $this->parseRelationshipDataId($relationshipData, $type);
+            $resourceRelShips[$type] = $this->parseRelationshipDataId($relationshipData, $type);
         } elseif (is_array($relationshipData) === true) {
             // it's either array of items or empty array
             $ids = [];
             foreach ($relationshipData as $typeAndIdPair) {
                 $ids[] = $this->parseRelationshipDataId($typeAndIdPair, $type);
             }
-            $resourceRelShips[$name] = $ids;
+            $resourceRelShips[$type] = $ids;
         } elseif ($relationshipData === null) {
-            $resourceRelShips[$name] = null;
+            $resourceRelShips[$type] = null;
         } else {
             // invalid input data
             throw new InvalidArgumentException();
