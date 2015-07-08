@@ -12,14 +12,14 @@ use \Neomerx\CoreApi\Api\Categories\CategoriesInterface;
  * @method static Category   read(string $code)
  * @method static void       update(string $code, array $input)
  * @method static void       delete(string $code)
- * @method static Collection readDescendants(Category $parent, array $parameters = [])
- * @method static void       moveUp(Category $category)
- * @method static void       moveDown(Category $category)
- * @method static void       attach(Category $category, Category $newParent)
- * @method static array      showProducts(Category $category)
- * @method static void       updatePositions(Category $category, array $productPositions) */
+ * @method static Collection readDescendants(string $parentCode)
+ * @method static void       moveUp(string $categoryCode)
+ * @method static void       moveDown(string $categoryCode)
+ * @method static void       attach(string $categoryCode, string $newParentCode)
+ */
 class Categories extends Facade
 {
+    /** Interface the facade is bind to */
     const INTERFACE_BIND_NAME = CategoriesInterface::class;
 
     /**

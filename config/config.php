@@ -13,6 +13,7 @@ use \Neomerx\Core\Models\Address;
 use \Neomerx\Core\Models\Carrier;
 use \Neomerx\Core\Models\Country;
 use \Neomerx\Core\Models\TaxRule;
+use \Neomerx\Core\Models\Category;
 use \Neomerx\Core\Models\Employee;
 use \Neomerx\Core\Models\Language;
 use \Neomerx\Core\Models\Supplier;
@@ -31,6 +32,7 @@ use \Neomerx\CoreApi\Schemas\AddressSchema;
 use \Neomerx\CoreApi\Schemas\CarrierSchema;
 use \Neomerx\CoreApi\Schemas\CountrySchema;
 use \Neomerx\CoreApi\Schemas\TaxRuleSchema;
+use \Neomerx\CoreApi\Schemas\CategorySchema;
 use \Neomerx\CoreApi\Schemas\EmployeeSchema;
 use \Neomerx\CoreApi\Schemas\LanguageSchema;
 use \Neomerx\CoreApi\Schemas\SupplierSchema;
@@ -76,6 +78,7 @@ return [
             Address::class                => AddressSchema::class,
             Calculator::class             => CalculatorSchema::class,
             Carrier::class                => CarrierSchema::class,
+            Category::class               => CategorySchema::class,
             Country::class                => CountrySchema::class,
             Employee::class               => EmployeeSchema::class,
             Image::class                  => ImageSchema::class,

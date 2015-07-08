@@ -10,8 +10,12 @@ use \Illuminate\Database\Eloquent\Collection;
  */
 interface CategoriesInterface extends CrudInterface
 {
+    /** Root category code */
+    const ROOT_CODE                         = Category::ROOT_CODE;
     /** Parameter key */
     const PARAM_CODE                        = Category::FIELD_CODE;
+    /** Parameter key */
+    const PARAM_ANCESTOR_CODE               = Category::FIELD_ANCESTOR_CODE;
     /** Parameter key */
     const PARAM_LINK                        = Category::FIELD_LINK;
     /** Parameter key */
@@ -120,21 +124,4 @@ interface CategoriesInterface extends CrudInterface
      * @return void
      */
     public function attachByCategory(Category $category, Category $newParent);
-
-//    /**
-//     * Read products in category.
-//     *
-//     * @param Category $category
-//     *
-//     * @return array Array of pairs [$product, $positionInCategory]
-//     */
-//    public function showProducts(Category $category);
-//
-//    /**
-//     * @param Category $category
-//     * @param array    $productPositions Product code and position pairs.
-//     *
-//     * @return void
-//     */
-//    public function updatePositions(Category $category, array $productPositions);
 }
